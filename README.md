@@ -104,7 +104,7 @@ pnpm check
 
 ## Current source baseline
 
-The authoritative `pinohu/ainbis` inventory currently records 689 businesses, of which 38 are developed and launched. The plan generator is designed to create a 1:1 planning registry for all 689 and to include future businesses in the same-run regeneration workflow.
+The authoritative `pinohu/ainbis` inventory currently records 691 businesses, of which 38 are developed and launched. The plan generator is designed to create a 1:1 planning registry for all 691 and to include future businesses in the same-run regeneration workflow.
 
 ## Status
 

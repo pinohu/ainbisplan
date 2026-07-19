@@ -1,0 +1,623 @@
+{
+  "schema_version": "1.0.0",
+  "plan_id": "ainbis-plan:multi-jurisdiction-film-permit-coi-completeness-desk",
+  "plan_version": "0.1.0",
+  "business": {
+    "slug": "multi-jurisdiction-film-permit-coi-completeness-desk",
+    "title": "ShootClear — Multi-Jurisdiction Film Permit & COI Completeness Desk",
+    "brand_name": null,
+    "source_repository": "pinohu/ainbis",
+    "blueprint_path": "2026-07-14-0104-multi-jurisdiction-film-permit-coi-completeness-desk-blueprint.html",
+    "blueprint_sha256": "ac3ea30d8a970e099e49037d05f5f7b7ca2f6d1a64ad8fcbc56309dbda6ce3df",
+    "source": "factory/main",
+    "on_main": true,
+    "developed": false,
+    "launched": false
+  },
+  "state": {
+    "planning": "scaffolded",
+    "indexability": "planning",
+    "freshness": "current",
+    "blockers": [
+      "Complete current primary-source and search-landscape research",
+      "Validate independent purpose and portfolio differentiation",
+      "Assign accountable owners and required reviewers",
+      "Specify original utility, launch content graph, conversion, and operating model",
+      "Pass all authority and indexability gates"
+    ]
+  },
+  "owners": {
+    "business": {
+      "name": null,
+      "role": null,
+      "contact": null,
+      "status": "unassigned"
+    },
+    "editorial": {
+      "name": null,
+      "role": null,
+      "contact": null,
+      "status": "unassigned"
+    },
+    "technical": {
+      "name": null,
+      "role": null,
+      "contact": null,
+      "status": "unassigned"
+    },
+    "domain_reviewer": null,
+    "privacy_security": {
+      "name": null,
+      "role": null,
+      "contact": null,
+      "status": "unassigned"
+    },
+    "approver": {
+      "name": null,
+      "role": null,
+      "contact": null,
+      "status": "unassigned"
+    }
+  },
+  "classification": {
+    "primary_archetype": "authority",
+    "secondary_archetypes": [
+      "professional"
+    ],
+    "sensitivity": [
+      "none"
+    ],
+    "ymyl_level": "none",
+    "geographic_model": "multi_jurisdiction",
+    "business_model": [
+      "managed_service",
+      "workflow"
+    ],
+    "review_intensity": "standard",
+    "cohort": "general-regulatory-and-workflow",
+    "priority": "unscored"
+  },
+  "strategy": {
+    "independent_purpose": {
+      "status": "unassessed",
+      "text": "",
+      "evidence": []
+    },
+    "audiences": [],
+    "jobs_to_be_done": [],
+    "problem": {
+      "status": "unassessed",
+      "text": "",
+      "evidence": []
+    },
+    "offer": {
+      "status": "unassessed",
+      "text": "",
+      "evidence": []
+    },
+    "differentiation": {
+      "status": "unassessed",
+      "text": "",
+      "evidence": []
+    },
+    "boundaries": [],
+    "commercial_model": [],
+    "overlap_assessment": {
+      "status": "unassessed",
+      "related_businesses": [],
+      "decision": "pending",
+      "rationale": ""
+    },
+    "success_metrics": []
+  },
+  "authority": {
+    "thesis": {
+      "status": "unassessed",
+      "text": "",
+      "evidence": []
+    },
+    "original_value": [],
+    "expertise": [],
+    "first_hand_evidence": [],
+    "methodology": [],
+    "maintenance_model": [],
+    "who_how_why": {
+      "who": "",
+      "how": "",
+      "why": ""
+    }
+  },
+  "research": {
+    "status": "not_started",
+    "source_manifest": "research-manifest.json",
+    "primary_sources": [],
+    "secondary_sources": [],
+    "open_questions": [],
+    "effective_date_dependencies": []
+  },
+  "search": {
+    "topic_boundary": "",
+    "intent_clusters": [],
+    "entities": [],
+    "regulations_standards": [],
+    "query_page_map": [],
+    "collision_status": "unassessed",
+    "competitor_and_gap_notes": []
+  },
+  "site_architecture": {
+    "navigation_model": [],
+    "pages": [],
+    "url_policy": [],
+    "internal_linking_model": [],
+    "excluded_page_patterns": [
+      "Token-swapped location, role, industry, regulation, or keyword pages",
+      "Pages without unique purpose, evidence, ownership, maintenance, and indexability decisions"
+    ]
+  },
+  "content": {
+    "launch_portfolio": [],
+    "expansion_backlog": [],
+    "editorial_workflow": [
+      "research",
+      "brief",
+      "draft",
+      "source verification",
+      "domain review when required",
+      "editorial approval",
+      "technical and accessibility validation",
+      "publish noindex",
+      "indexability approval",
+      "monitor",
+      "refresh or retire"
+    ],
+    "review_policy": [],
+    "prohibited_content": [
+      "Unsupported consequential claims",
+      "Fabricated proof, experts, credentials, results, clients, reviews, or statistics",
+      "Scaled or doorway content created primarily for search rankings",
+      "Superficial rewriting without substantial original value"
+    ],
+    "newsletter_pillars": []
+  },
+  "utilities": [
+    {
+      "id": "utility-01",
+      "name": "Readiness, risk, or completeness assessment",
+      "type": "assessment",
+      "purpose": "Provide defensible value beyond informational content",
+      "status": "idea",
+      "inputs": [],
+      "outputs": [],
+      "source_basis": [],
+      "risks": [],
+      "reviewers": [],
+      "conversion_role": null
+    }
+  ],
+  "conversion": {
+    "primary_action": "To be determined from business model and audience intent",
+    "secondary_actions": [],
+    "lead_magnets": [],
+    "forms": [],
+    "newsletter": "undecided",
+    "crm_lifecycle": [],
+    "ethical_constraints": [
+      "No fake urgency, deceptive scarcity, confirm-shaming, hidden fees, or preselected consent",
+      "Collect only data necessary for the stated purpose"
+    ]
+  },
+  "trust": {
+    "authors": [],
+    "reviewers": [],
+    "source_policy": [],
+    "claim_policy": [],
+    "proof_policy": [
+      "Only genuine, permissioned proof may be presented as real",
+      "Pre-launch proof slots must be visibly labeled placeholder or illustrative"
+    ],
+    "disclosures": [],
+    "corrections": []
+  },
+  "technical": {
+    "rendering": "undecided",
+    "canonical_policy": [],
+    "robots_policy": [
+      "Generated and review environments remain noindex"
+    ],
+    "sitemap_profiles": [],
+    "redirect_policy": [],
+    "structured_data": [],
+    "localization": [],
+    "monitoring": []
+  },
+  "accessibility": {
+    "status": "planned",
+    "requirements": [
+      "WCAG 2.2 AA minimum",
+      "Manual and assistive-technology review for critical flows"
+    ],
+    "owners": [],
+    "evidence": []
+  },
+  "performance": {
+    "status": "planned",
+    "requirements": [
+      "Template budgets",
+      "Core Web Vitals lab and real-user monitoring",
+      "Third-party script governance"
+    ],
+    "owners": [],
+    "evidence": []
+  },
+  "privacy_security": {
+    "status": "planned",
+    "requirements": [
+      "Data minimization",
+      "Secure forms and uploads",
+      "Consent and preference management",
+      "Incident and rollback plans"
+    ],
+    "owners": [],
+    "evidence": []
+  },
+  "analytics": {
+    "status": "planned",
+    "requirements": [
+      "Consent-aware event taxonomy",
+      "Search, content, utility, lead, conversion, and quality dashboards"
+    ],
+    "owners": [],
+    "evidence": []
+  },
+  "offsite_authority": {
+    "status": "planned",
+    "requirements": [
+      "Original citation-worthy assets",
+      "Legitimate expert, media, association, partnership, review, and reputation activity"
+    ],
+    "owners": [],
+    "evidence": []
+  },
+  "implementation": {
+    "stage": "scaffolded",
+    "epics": [
+      {
+        "id": "epic-01",
+        "name": "Discovery, sources, and differentiation",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-02",
+        "name": "Audience, offer, and commercial validation",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-03",
+        "name": "Brand and design-system configuration",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-04",
+        "name": "Content and entity models",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-05",
+        "name": "Information architecture and URL plan",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-06",
+        "name": "Authority content and trust pages",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-07",
+        "name": "Product, service, or workflow experience",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-08",
+        "name": "Original utility and lead magnets",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-09",
+        "name": "Editorial and domain-review operations",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-10",
+        "name": "Technical SEO, structured data, and internal linking",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-11",
+        "name": "Lead capture, newsletter, CRM, and lifecycle",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-12",
+        "name": "Analytics, attribution, experimentation, and dashboards",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-13",
+        "name": "Accessibility, performance, security, privacy, and legal review",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-14",
+        "name": "Off-site authority, partnerships, reviews, and reputation",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-15",
+        "name": "Migration, launch, indexation, monitoring, and rollback",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      },
+      {
+        "id": "epic-16",
+        "name": "Continuous content, regulatory, product, and technical maintenance",
+        "status": "planned",
+        "owner": null,
+        "deliverables": [],
+        "dependencies": [],
+        "acceptance_criteria": [],
+        "evidence": []
+      }
+    ],
+    "dependencies": [],
+    "migration": [],
+    "launch": [],
+    "operations": []
+  },
+  "gates": [
+    {
+      "id": "gate-a",
+      "name": "Inventory and identity",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-b",
+      "name": "Independent purpose and differentiation",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-c",
+      "name": "Research and source integrity",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-d",
+      "name": "Authority and editorial trust",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-e",
+      "name": "Original value and content completeness",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-f",
+      "name": "Product, service, and conversion truthfulness",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-g",
+      "name": "Information architecture and internal linking",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-h",
+      "name": "On-page and technical SEO",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-i",
+      "name": "Structured data",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-j",
+      "name": "Accessibility",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-k",
+      "name": "Performance and page experience",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-l",
+      "name": "Privacy, security, and legal",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-m",
+      "name": "Analytics, consent, and measurement",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-n",
+      "name": "Newsletter and lifecycle operations",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-o",
+      "name": "Off-site authority and reputation",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    },
+    {
+      "id": "gate-p",
+      "name": "Launch, migration, and operations",
+      "status": "not_assessed",
+      "blocking": true,
+      "owner": null,
+      "reviewed_at": null,
+      "evidence": [],
+      "notes": ""
+    }
+  ],
+  "provenance": {
+    "generated_at": "2026-07-19T06:01:02.932Z",
+    "generator": "ainbis-business-authority-plan-generator@0.1.0",
+    "inputs": [
+      "2026-07-14-0104-multi-jurisdiction-film-permit-coi-completeness-desk-blueprint.html"
+    ],
+    "human_review": [],
+    "change_log": [
+      "Initial deterministic scaffold from authoritative inventory"
+    ]
+  }
+}

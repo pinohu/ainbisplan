@@ -41,14 +41,14 @@ This index records the planning material consolidated in the repository and prov
 
 The source inventory in `pinohu/ainbis` records:
 
-- 689 normalized businesses;
+- 691 normalized businesses;
 - 531 factory/main blueprints;
 - 158 imported blueprints;
 - 38 developed builds;
 - 38 launched microsites;
 - 695 raw blueprint artifacts before slug deduplication.
 
-The per-business generator is designed to scaffold all 689 records from the authoritative inventory and automatically add future businesses. A scaffold is not an approved implementation plan or indexability decision; it creates the complete review contract that must then be populated with current research, differentiation, evidence, owners, and business-specific decisions.
+The per-business generator is designed to scaffold all 691 records from the authoritative inventory and automatically add future businesses. A scaffold is not an approved implementation plan or indexability decision; it creates the complete review contract that must then be populated with current research, differentiation, evidence, owners, and business-specific decisions.
 
 ## Historical planning represented in the consolidation
 
