@@ -1,4 +1,4 @@
-name: Validate design-system foundation
+name: Validate design-system and authority platform
 
 on:
   pull_request:
@@ -37,6 +37,12 @@ jobs:
 
       - name: Build packages
         run: pnpm build
+
+      - name: Execute portfolio authority triage
+        run: node scripts/execute-authority-portfolio.mjs
+
+      - name: Validate all portfolio execution outputs
+        run: pnpm validate:execution
 
       - name: Type-check packages
         run: pnpm typecheck
