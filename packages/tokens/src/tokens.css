@@ -1,0 +1,71 @@
+:root {
+  color-scheme: light;
+  --ainbis-surface: #ffffff;
+  --ainbis-surface-subtle: #f8fafc;
+  --ainbis-surface-raised: #ffffff;
+  --ainbis-text: #0f172a;
+  --ainbis-text-muted: #475569;
+  --ainbis-border: #cbd5e1;
+  --ainbis-border-strong: #64748b;
+  --ainbis-interactive: #1d4ed8;
+  --ainbis-interactive-hover: #1e3a8a;
+  --ainbis-focus: #3b82f6;
+  --ainbis-success-surface: #f0fdf4;
+  --ainbis-success-text: #14532d;
+  --ainbis-warning-surface: #fffbeb;
+  --ainbis-warning-text: #78350f;
+  --ainbis-danger-surface: #fef2f2;
+  --ainbis-danger-text: #7f1d1d;
+  --ainbis-info-surface: #eff6ff;
+  --ainbis-info-text: #1e3a8a;
+  --ainbis-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ainbis-font-serif: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+  --ainbis-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --ainbis-space-1: 0.25rem;
+  --ainbis-space-2: 0.5rem;
+  --ainbis-space-3: 0.75rem;
+  --ainbis-space-4: 1rem;
+  --ainbis-space-6: 1.5rem;
+  --ainbis-space-8: 2rem;
+  --ainbis-space-12: 3rem;
+  --ainbis-space-16: 4rem;
+  --ainbis-radius-sm: 0.25rem;
+  --ainbis-radius-md: 0.5rem;
+  --ainbis-radius-lg: 0.75rem;
+  --ainbis-radius-xl: 1rem;
+  --ainbis-radius-pill: 9999px;
+  --ainbis-duration-fast: 120ms;
+  --ainbis-duration-normal: 200ms;
+  --ainbis-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ainbis-measure-reading: 68ch;
+  --ainbis-container-wide: 80rem;
+}
+
+[data-color-mode="dark"] {
+  color-scheme: dark;
+  --ainbis-surface: #020617;
+  --ainbis-surface-subtle: #0f172a;
+  --ainbis-surface-raised: #1e293b;
+  --ainbis-text: #f8fafc;
+  --ainbis-text-muted: #cbd5e1;
+  --ainbis-border: #334155;
+  --ainbis-border-strong: #64748b;
+  --ainbis-interactive: #93c5fd;
+  --ainbis-interactive-hover: #dbeafe;
+  --ainbis-focus: #93c5fd;
+  --ainbis-success-surface: #14532d;
+  --ainbis-success-text: #f0fdf4;
+  --ainbis-warning-surface: #78350f;
+  --ainbis-warning-text: #fffbeb;
+  --ainbis-danger-surface: #7f1d1d;
+  --ainbis-danger-text: #fef2f2;
+  --ainbis-info-surface: #1e3a8a;
+  --ainbis-info-text: #eff6ff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --ainbis-duration-fast: 0ms;
+    --ainbis-duration-normal: 0ms;
+  }
+}
