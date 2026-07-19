@@ -87,5 +87,5 @@ export function recommendedSchema(pageType: string, local = false): SchemaType[]
 }
 
 export function buildGraph(nodes: StructuredDataNode[]): { "@context": "https://schema.org"; "@graph": StructuredDataNode[] } {
-  return { "@context": "https://schema.org", "@graph": nodes.map(({ "@context": _context, ...node }) => ({ "@context": "https://schema.org", ...node })) };
+  return { "@context": "https://schema.org", "@graph": nodes };
 }
