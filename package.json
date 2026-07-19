@@ -13,7 +13,11 @@
     "plan:sample": "rm -rf .tmp/plans && node scripts/generate-business-authority-plans.mjs --inventory fixtures/inventory.sample.json --output .tmp/plans --mode scaffold && node scripts/generate-business-authority-plans.mjs --inventory fixtures/inventory.sample.json --output .tmp/plans --mode validate",
     "execute:portfolio": "pnpm build && node scripts/execute-authority-portfolio.mjs",
     "validate:execution": "node scripts/validate-authority-execution.mjs",
+    "controller:reconcile": "node scripts/controller/reconcile.mjs",
+    "controller:validate": "node scripts/controller/validate.mjs",
+    "controller:fixture": "rm -rf .tmp/controller && node scripts/generate-business-authority-plans.mjs --inventory fixtures/inventory.sample.json --output .tmp/controller/plans --mode scaffold && node scripts/controller/reconcile.mjs --inventory fixtures/inventory.sample.json --plans-root .tmp/controller/plans --source-root . --output .tmp/controller/state --reports .tmp/controller/reports --exceptions .tmp/controller/exceptions --mode fixture && node scripts/controller/validate.mjs --state .tmp/controller/state/controller-state.json",
     "check:portfolio": "pnpm validate && pnpm plan:sample && pnpm execute:portfolio && pnpm validate:execution && pnpm typecheck",
+    "check:controller": "pnpm validate && pnpm controller:fixture && pnpm build && pnpm typecheck",
     "check": "pnpm validate && pnpm plan:sample && pnpm build && pnpm typecheck"
   },
   "devDependencies": {
