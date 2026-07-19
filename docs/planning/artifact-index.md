@@ -22,11 +22,20 @@ This index records the planning material consolidated in the repository and prov
 | `authority-platform/README.md` | Portfolio-wide authority implementation decision, outcomes, planning levels, indexability states, and synchronization rules | Accepted |
 | `authority-platform/feature-catalog.md` | Exhaustive catalog of authority, content, SEO, accessibility, performance, conversion, newsletter, analytics, privacy, security, reputation, and operational requirements | Required |
 | `authority-platform/per-business-plan-contract.md` | Mandatory individualized plan fields, research, authority thesis, content graph, utility, conversion, technical, off-site, and implementation requirements for every business | Required |
-| `authority-platform/implementation-architecture.md` | Proposed applications, packages, services, repository boundaries, synchronization, testing, and observability architecture | Planned |
-| `authority-platform/programmatic-seo-network-safety.md` | Anti-doorway, anti-scaled-content, differentiation, originality, claim-integrity, collision, cross-linking, consolidation, and indexation policy | Required |
-| `authority-platform/delivery-program.md` | Portfolio workstreams, cohorts, reference implementations, launched-site migration, high-risk review, continuous operations, and business stages | Planned |
+| `authority-platform/implementation-architecture.md` | Applications, packages, services, repository boundaries, synchronization, testing, and observability architecture | Implemented in stages |
+| `authority-platform/programmatic-seo-network-safety.md` | Anti-doorway, anti-scaled-content, differentiation, originality, claim-integrity, cross-linking, collision, consolidation, and indexation policy | Required |
+| `authority-platform/delivery-program.md` | Portfolio workstreams, cohorts, reference implementations, launched-site migration, high-risk review, continuous operations, and business stages | Active |
 | `authority-platform/quality-gates.md` | Hard blockers, scored dimensions, evidence requirements, indexability decision, continuous enforcement, and definition of done | Required |
 | `authority-platform/source-standards.md` | Official search, structured data, Core Web Vitals, WCAG, security, privacy, and domain-source baseline | Required |
+
+## Autonomous portfolio operations
+
+| Artifact | Purpose | Status |
+|---|---|---|
+| `autonomous-controller/README.md` | Cross-repository controller architecture, delegated operating model, exception policy, release flow, credentials, and recovery procedures | Implemented |
+| `controller/config.json` | Machine-readable automation, gating, operating-model, Release Zero, and escalation policy | Implemented |
+| `scripts/controller/reconcile.mjs` | Reconciles source inventory, blueprint hashes, plans, launch catalog, build manifest, operators, reviewers, gates, and desired actions | Implemented |
+| `scripts/controller/validate.mjs` | Validates controller state and prevents unsafe indexability or false exception-only readiness | Implemented |
 
 ## Machine-readable planning assets
 
@@ -36,19 +45,20 @@ This index records the planning material consolidated in the repository and prov
 | `templates/business-authority-plan.template.json` | Human-reviewable complete plan scaffold | Accepted |
 | `scripts/generate-business-authority-plans.mjs` | Generates or refreshes one plan directory per inventory slug and validates exact inventory-plan parity | Implemented |
 | `fixtures/inventory.sample.json` | CI fixture proving deterministic generation and parity validation | Implemented |
+| `fixtures/controller.config.sample.json` | CI fixture proving deterministic controller operation without cross-repository credentials | Implemented |
 
 ## Current authoritative inventory baseline
 
-The source inventory in `pinohu/ainbis` records:
+The source inventory in `pinohu/ainbis` currently records:
 
-- 691 normalized businesses;
-- 531 factory/main blueprints;
+- 693 normalized businesses;
+- 535 factory/main blueprints;
 - 158 imported blueprints;
 - 38 developed builds;
 - 38 launched microsites;
-- 695 raw blueprint artifacts before slug deduplication.
+- 699 raw blueprint artifacts before slug deduplication.
 
-The per-business generator is designed to scaffold all 691 records from the authoritative inventory and automatically add future businesses. A scaffold is not an approved implementation plan or indexability decision; it creates the complete review contract that must then be populated with current research, differentiation, evidence, owners, and business-specific decisions.
+The controller is designed to regenerate the plan corpus and launch catalog whenever the authoritative inventory changes. A generated plan is not an approved implementation or indexability decision; current research, accountable owners, qualified review where required, original utility, business-specific content, and every blocking gate remain mandatory.
 
 ## Historical planning represented in the consolidation
 
