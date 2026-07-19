@@ -32,6 +32,9 @@ jobs:
       - name: Validate planning and repository structure
         run: pnpm validate
 
+      - name: Validate per-business plan generation and inventory parity
+        run: pnpm plan:sample
+
       - name: Build packages
         run: pnpm build
 
