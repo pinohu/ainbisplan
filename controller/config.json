@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0.0",
+  "controller": {
+    "name": "AINBIS Autonomous Portfolio Controller",
+    "organization": "Obuke LLC",
+    "mode": "exception_only",
+    "cadence": "hourly",
+    "source_repository": "pinohu/ainbis",
+    "planning_repository": "pinohu/ainbisplan",
+    "launchpad_repository": "pinohu/ainbis-launchpad"
+  },
+  "automation": {
+    "regenerate_inventory": true,
+    "refresh_missing_or_stale_plans": true,
+    "synchronize_launchpad_catalog": true,
+    "enrich_all_plans": true,
+    "open_or_update_exception_issue": true,
+    "auto_commit_generated_state": true,
+    "auto_deploy_private_builds": true,
+    "auto_deploy_public_noindex": true,
+    "auto_index": false,
+    "auto_retire": false
+  },
+  "gates": {
+    "require_blueprint_hash": true,
+    "require_independent_purpose_approval": true,
+    "require_differentiation_approval": true,
+    "require_source_evidence": true,
+    "require_qualified_review_when_classified": true,
+    "require_accessibility_pass": true,
+    "require_performance_pass": true,
+    "require_privacy_security_pass": true,
+    "require_analytics_consent_pass": true,
+    "require_all_blocking_gates_passed": true
+  },
+  "operating_model": {
+    "owner": {
+      "organization": "Obuke LLC",
+      "github_login": "pinohu",
+      "status": "confirmed"
+    },
+    "portfolio_operator": {
+      "name": null,
+      "contact": null,
+      "status": "unassigned",
+      "spending_limit_usd": 0
+    },
+    "technical_operator": {
+      "name": "AINBIS Controller",
+      "contact": "github:pinohu/ainbisplan",
+      "status": "active"
+    },
+    "reviewer_network": {
+      "status": "unassigned",
+      "disciplines": [
+        "legal_regulatory",
+        "clinical_healthcare",
+        "tax_financial",
+        "employment_benefits",
+        "housing_real_estate",
+        "environmental_safety",
+        "privacy_cybersecurity",
+        "children_education"
+      ]
+    }
+  },
+  "release_zero": {
+    "slug": "a2p-10dlc-brand-campaign-approval-completeness-pack-engine",
+    "public_name": "CampaignClear",
+    "launch_mode": "gate_triggered",
+    "target_state": "operating"
+  },
+  "escalation": {
+    "notify_on": [
+      "controller_credentials_missing",
+      "source_plan_catalog_drift_unrepaired",
+      "failed_deployment_without_rollback",
+      "critical_security_or_privacy_finding",
+      "qualified_reviewer_rejection",
+      "domain_payment_or_email_failure",
+      "budget_threshold_exceeded",
+      "material_regulatory_change",
+      "business_retirement_recommendation"
+    ],
+    "suppress_routine_success": true,
+    "stale_run_hours": 2
+  }
+}
