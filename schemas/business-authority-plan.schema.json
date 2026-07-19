@@ -1,0 +1,459 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ainbis.example/schemas/business-authority-plan.schema.json",
+  "title": "AINBIS Business Authority Plan",
+  "description": "Machine-readable implementation plan for one AINBIS business.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "plan_id",
+    "plan_version",
+    "business",
+    "state",
+    "owners",
+    "classification",
+    "strategy",
+    "authority",
+    "search",
+    "site_architecture",
+    "content",
+    "utilities",
+    "conversion",
+    "trust",
+    "technical",
+    "accessibility",
+    "performance",
+    "privacy_security",
+    "analytics",
+    "offsite_authority",
+    "implementation",
+    "gates",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": { "type": "string", "const": "1.0.0" },
+    "plan_id": { "type": "string", "pattern": "^ainbis-plan:[a-z0-9][a-z0-9-]*$" },
+    "plan_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "business": { "$ref": "#/$defs/business" },
+    "state": { "$ref": "#/$defs/state" },
+    "owners": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["business", "editorial", "technical", "approver"],
+      "properties": {
+        "business": { "$ref": "#/$defs/owner" },
+        "editorial": { "$ref": "#/$defs/owner" },
+        "technical": { "$ref": "#/$defs/owner" },
+        "domain_reviewer": { "anyOf": [{ "$ref": "#/$defs/owner" }, { "type": "null" }] },
+        "privacy_security": { "anyOf": [{ "$ref": "#/$defs/owner" }, { "type": "null" }] },
+        "approver": { "$ref": "#/$defs/owner" }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_archetype", "secondary_archetypes", "sensitivity", "ymyl_level", "geographic_model", "business_model", "review_intensity"],
+      "properties": {
+        "primary_archetype": { "$ref": "#/$defs/archetype" },
+        "secondary_archetypes": { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/archetype" } },
+        "sensitivity": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": ["none", "legal", "clinical", "financial", "employment", "housing", "safety", "environmental", "identity", "privacy", "children", "education", "government", "regulated_industry", "other"]
+          }
+        },
+        "ymyl_level": { "enum": ["none", "moderate", "high"] },
+        "geographic_model": { "enum": ["global", "national", "multi_jurisdiction", "state_province", "regional", "local", "service_area", "multi_location", "not_applicable"] },
+        "business_model": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["professional_service", "managed_service", "software", "workflow", "document_generation", "advisory", "directory", "marketplace", "data", "publishing", "education", "lead_generation", "hybrid"] } },
+        "review_intensity": { "enum": ["standard", "enhanced", "qualified_domain_review", "multi_disciplinary_review"] },
+        "cohort": { "type": ["string", "null"] },
+        "priority": { "enum": ["critical", "high", "medium", "low", "unscored"] }
+      }
+    },
+    "strategy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["independent_purpose", "audiences", "jobs_to_be_done", "problem", "offer", "differentiation", "boundaries", "commercial_model", "overlap_assessment"],
+      "properties": {
+        "independent_purpose": { "$ref": "#/$defs/decisionText" },
+        "audiences": { "type": "array", "items": { "$ref": "#/$defs/audience" } },
+        "jobs_to_be_done": { "type": "array", "items": { "type": "string" } },
+        "problem": { "$ref": "#/$defs/decisionText" },
+        "offer": { "$ref": "#/$defs/decisionText" },
+        "differentiation": { "$ref": "#/$defs/decisionText" },
+        "boundaries": { "type": "array", "items": { "type": "string" } },
+        "commercial_model": { "type": "array", "items": { "type": "string" } },
+        "overlap_assessment": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "related_businesses", "decision", "rationale"],
+          "properties": {
+            "status": { "enum": ["unassessed", "distinct", "manageable_overlap", "reposition_required", "consolidation_required"] },
+            "related_businesses": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" } },
+            "decision": { "enum": ["remain_independent", "reposition", "consolidate", "remain_noindex", "pending"] },
+            "rationale": { "type": "string" }
+          }
+        },
+        "success_metrics": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["thesis", "original_value", "expertise", "first_hand_evidence", "methodology", "maintenance_model"],
+      "properties": {
+        "thesis": { "$ref": "#/$defs/decisionText" },
+        "original_value": { "type": "array", "items": { "type": "string" } },
+        "expertise": { "type": "array", "items": { "type": "string" } },
+        "first_hand_evidence": { "type": "array", "items": { "type": "string" } },
+        "methodology": { "type": "array", "items": { "type": "string" } },
+        "maintenance_model": { "type": "array", "items": { "type": "string" } },
+        "who_how_why": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "who": { "type": "string" },
+            "how": { "type": "string" },
+            "why": { "type": "string" }
+          }
+        }
+      }
+    },
+    "research": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "status": { "enum": ["not_started", "in_progress", "review_required", "complete", "stale"] },
+        "source_manifest": { "type": "string" },
+        "primary_sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
+        "secondary_sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
+        "open_questions": { "type": "array", "items": { "type": "string" } },
+        "effective_date_dependencies": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "search": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["topic_boundary", "intent_clusters", "entities", "query_page_map", "collision_status"],
+      "properties": {
+        "topic_boundary": { "type": "string" },
+        "intent_clusters": { "type": "array", "items": { "$ref": "#/$defs/intentCluster" } },
+        "entities": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+        "regulations_standards": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+        "query_page_map": { "type": "array", "items": { "$ref": "#/$defs/queryPage" } },
+        "collision_status": { "enum": ["unassessed", "clear", "review_required", "blocked"] },
+        "competitor_and_gap_notes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "site_architecture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["navigation_model", "pages", "url_policy", "internal_linking_model"],
+      "properties": {
+        "navigation_model": { "type": "array", "items": { "type": "string" } },
+        "pages": { "type": "array", "items": { "$ref": "#/$defs/page" } },
+        "url_policy": { "type": "array", "items": { "type": "string" } },
+        "internal_linking_model": { "type": "array", "items": { "type": "string" } },
+        "excluded_page_patterns": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "content": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["launch_portfolio", "expansion_backlog", "editorial_workflow", "review_policy", "prohibited_content"],
+      "properties": {
+        "launch_portfolio": { "type": "array", "items": { "$ref": "#/$defs/contentItem" } },
+        "expansion_backlog": { "type": "array", "items": { "$ref": "#/$defs/contentItem" } },
+        "editorial_workflow": { "type": "array", "items": { "type": "string" } },
+        "review_policy": { "type": "array", "items": { "type": "string" } },
+        "prohibited_content": { "type": "array", "items": { "type": "string" } },
+        "newsletter_pillars": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "utilities": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/utility" }
+    },
+    "conversion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["primary_action", "secondary_actions", "lead_magnets", "forms", "newsletter", "crm_lifecycle"],
+      "properties": {
+        "primary_action": { "type": "string" },
+        "secondary_actions": { "type": "array", "items": { "type": "string" } },
+        "lead_magnets": { "type": "array", "items": { "type": "string" } },
+        "forms": { "type": "array", "items": { "type": "string" } },
+        "newsletter": { "enum": ["dedicated", "shared_vertical", "not_applicable", "undecided"] },
+        "crm_lifecycle": { "type": "array", "items": { "type": "string" } },
+        "ethical_constraints": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "trust": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["authors", "reviewers", "source_policy", "claim_policy", "proof_policy", "disclosures", "corrections"],
+      "properties": {
+        "authors": { "type": "array", "items": { "type": "string" } },
+        "reviewers": { "type": "array", "items": { "type": "string" } },
+        "source_policy": { "type": "array", "items": { "type": "string" } },
+        "claim_policy": { "type": "array", "items": { "type": "string" } },
+        "proof_policy": { "type": "array", "items": { "type": "string" } },
+        "disclosures": { "type": "array", "items": { "type": "string" } },
+        "corrections": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "technical": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rendering", "canonical_policy", "robots_policy", "sitemap_profiles", "redirect_policy", "structured_data", "localization", "monitoring"],
+      "properties": {
+        "rendering": { "enum": ["static", "server_rendered", "hybrid", "client_rendered_exception", "undecided"] },
+        "canonical_policy": { "type": "array", "items": { "type": "string" } },
+        "robots_policy": { "type": "array", "items": { "type": "string" } },
+        "sitemap_profiles": { "type": "array", "items": { "type": "string" } },
+        "redirect_policy": { "type": "array", "items": { "type": "string" } },
+        "structured_data": { "type": "array", "items": { "type": "string" } },
+        "localization": { "type": "array", "items": { "type": "string" } },
+        "monitoring": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "accessibility": { "$ref": "#/$defs/requirementProfile" },
+    "performance": { "$ref": "#/$defs/requirementProfile" },
+    "privacy_security": { "$ref": "#/$defs/requirementProfile" },
+    "analytics": { "$ref": "#/$defs/requirementProfile" },
+    "offsite_authority": { "$ref": "#/$defs/requirementProfile" },
+    "implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stage", "epics", "dependencies", "migration", "launch", "operations"],
+      "properties": {
+        "stage": { "enum": ["inventoried", "scaffolded", "researching", "differentiated", "plan_review", "implementation_ready", "private_build", "quality_review", "public_noindex", "indexable_candidate", "indexable", "operating", "blocked", "failed", "reposition_required", "consolidation_required", "restricted", "retired"] },
+        "epics": { "type": "array", "items": { "$ref": "#/$defs/epic" } },
+        "dependencies": { "type": "array", "items": { "type": "string" } },
+        "migration": { "type": "array", "items": { "type": "string" } },
+        "launch": { "type": "array", "items": { "type": "string" } },
+        "operations": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "gates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/gate" }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generated_at", "generator", "inputs", "human_review", "change_log"],
+      "properties": {
+        "generated_at": { "type": "string", "format": "date-time" },
+        "generator": { "type": "string" },
+        "inputs": { "type": "array", "items": { "type": "string" } },
+        "human_review": { "type": "array", "items": { "type": "string" } },
+        "change_log": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "$defs": {
+    "business": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["slug", "title", "source_repository", "blueprint_path", "on_main", "developed", "launched"],
+      "properties": {
+        "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "title": { "type": "string", "minLength": 1 },
+        "brand_name": { "type": ["string", "null"] },
+        "source_repository": { "type": "string" },
+        "blueprint_path": { "type": "string" },
+        "blueprint_sha256": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+        "source": { "type": ["string", "null"] },
+        "on_main": { "type": "boolean" },
+        "developed": { "type": "boolean" },
+        "launched": { "type": "boolean" }
+      }
+    },
+    "state": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["planning", "indexability", "freshness"],
+      "properties": {
+        "planning": { "enum": ["unassessed", "scaffolded", "research_required", "differentiation_required", "domain_review_required", "implementation_ready", "implemented", "restricted", "consolidation_required", "retired"] },
+        "indexability": { "enum": ["planning", "private_build", "public_noindex", "indexable_candidate", "indexable", "restricted", "retired"] },
+        "freshness": { "enum": ["current", "review_due", "stale", "unknown"] },
+        "blockers": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "owner": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status"],
+      "properties": {
+        "name": { "type": ["string", "null"] },
+        "role": { "type": ["string", "null"] },
+        "contact": { "type": ["string", "null"] },
+        "status": { "enum": ["unassigned", "assigned", "confirmed"] }
+      }
+    },
+    "archetype": { "enum": ["authority", "professional", "saas", "operations", "clinical", "academic", "directory", "kids", "real_estate", "premium", "ai_native", "admin"] },
+    "decisionText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "text"],
+      "properties": {
+        "status": { "enum": ["unassessed", "draft", "review_required", "approved"] },
+        "text": { "type": "string" },
+        "evidence": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "audience": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "needs", "decisions"],
+      "properties": {
+        "name": { "type": "string" },
+        "needs": { "type": "array", "items": { "type": "string" } },
+        "decisions": { "type": "array", "items": { "type": "string" } },
+        "objections": { "type": "array", "items": { "type": "string" } },
+        "trust_requirements": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["title", "url", "authority_type", "accessed_at"],
+      "properties": {
+        "title": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "authority_type": { "enum": ["statute", "regulation", "court", "agency", "official_form", "standard", "professional_body", "peer_reviewed", "technical_documentation", "first_hand", "secondary", "other"] },
+        "published_or_effective_at": { "type": ["string", "null"] },
+        "accessed_at": { "type": "string", "format": "date" },
+        "notes": { "type": "string" }
+      }
+    },
+    "intentCluster": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "intent", "audience", "queries"],
+      "properties": {
+        "name": { "type": "string" },
+        "intent": { "enum": ["informational", "commercial", "transactional", "navigational", "local", "support", "mixed"] },
+        "audience": { "type": "string" },
+        "queries": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "entity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "type", "role"],
+      "properties": {
+        "name": { "type": "string" },
+        "type": { "type": "string" },
+        "identifier": { "type": ["string", "null"] },
+        "role": { "type": "string" },
+        "relationships": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "queryPage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["query_or_cluster", "page_id", "purpose", "indexability"],
+      "properties": {
+        "query_or_cluster": { "type": "string" },
+        "page_id": { "type": "string" },
+        "purpose": { "type": "string" },
+        "indexability": { "enum": ["indexable", "noindex", "conditional", "excluded"] }
+      }
+    },
+    "page": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "page_type", "path", "purpose", "audience", "indexability", "status"],
+      "properties": {
+        "id": { "type": "string" },
+        "page_type": { "type": "string" },
+        "path": { "type": "string" },
+        "purpose": { "type": "string" },
+        "audience": { "type": "array", "items": { "type": "string" } },
+        "indexability": { "enum": ["indexable", "noindex", "conditional", "excluded"] },
+        "status": { "enum": ["planned", "draft", "review", "approved", "implemented", "published", "retired"] },
+        "schema_types": { "type": "array", "items": { "type": "string" } },
+        "required_evidence": { "type": "array", "items": { "type": "string" } },
+        "primary_action": { "type": ["string", "null"] }
+      }
+    },
+    "contentItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "title", "content_type", "purpose", "status"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "content_type": { "type": "string" },
+        "purpose": { "type": "string" },
+        "status": { "enum": ["idea", "research", "brief", "draft", "review", "approved", "published", "refresh", "retired"] },
+        "owner": { "type": ["string", "null"] },
+        "reviewer": { "type": ["string", "null"] },
+        "review_interval": { "type": ["string", "null"] }
+      }
+    },
+    "utility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "type", "purpose", "status", "inputs", "outputs", "source_basis", "risks"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "enum": ["calculator", "assessment", "quiz", "checklist", "tracker", "decision_tree", "template", "document_generator", "comparison", "dataset", "map", "report", "other"] },
+        "purpose": { "type": "string" },
+        "status": { "enum": ["idea", "specified", "review", "approved", "implemented", "published", "retired"] },
+        "inputs": { "type": "array", "items": { "type": "string" } },
+        "outputs": { "type": "array", "items": { "type": "string" } },
+        "source_basis": { "type": "array", "items": { "type": "string" } },
+        "risks": { "type": "array", "items": { "type": "string" } },
+        "reviewers": { "type": "array", "items": { "type": "string" } },
+        "conversion_role": { "type": ["string", "null"] }
+      }
+    },
+    "requirementProfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "requirements", "owners", "evidence"],
+      "properties": {
+        "status": { "enum": ["not_started", "planned", "in_progress", "review", "passed", "failed", "not_applicable"] },
+        "requirements": { "type": "array", "items": { "type": "string" } },
+        "owners": { "type": "array", "items": { "type": "string" } },
+        "evidence": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "epic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "status", "deliverables", "dependencies", "acceptance_criteria"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "status": { "enum": ["planned", "ready", "in_progress", "blocked", "review", "complete", "cancelled"] },
+        "owner": { "type": ["string", "null"] },
+        "deliverables": { "type": "array", "items": { "type": "string" } },
+        "dependencies": { "type": "array", "items": { "type": "string" } },
+        "acceptance_criteria": { "type": "array", "items": { "type": "string" } },
+        "evidence": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "gate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "status", "blocking", "evidence"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "status": { "enum": ["not_assessed", "in_progress", "pass", "fail", "waived", "not_applicable"] },
+        "blocking": { "type": "boolean" },
+        "owner": { "type": ["string", "null"] },
+        "reviewed_at": { "type": ["string", "null"], "format": "date-time" },
+        "evidence": { "type": "array", "items": { "type": "string" } },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}
