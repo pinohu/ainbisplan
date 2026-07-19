@@ -75,7 +75,13 @@ export function cohortSummary(assessments: PriorityAssessment[]): Record<string,
   for (const item of assessments) {
     const row = result[item.cohort] ?? { total: 0, critical: 0, high: 0, medium: 0, low: 0, reviewer_required: 0, launched: 0 };
     row.total += 1;
-    row[item.priority as "critical" | "high" | "medium" | "low"] += 1;
+    switch (item.priority) {
+      case "critical": row.critical += 1; break;
+      case "high": row.high += 1; break;
+      case "medium": row.medium += 1; break;
+      case "low": row.low += 1; break;
+      case "unscored": break;
+    }
     if (item.reviewerRequired) row.reviewer_required += 1;
     if (item.launchedAuditRequired) row.launched += 1;
     result[item.cohort] = row;
