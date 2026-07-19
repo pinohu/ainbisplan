@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.0.0",
+  "plan_id": "ainbis-plan:replace-with-business-slug",
+  "plan_version": "0.1.0",
+  "business": {
+    "slug": "replace-with-business-slug",
+    "title": "Replace with business title",
+    "brand_name": null,
+    "source_repository": "pinohu/ainbis",
+    "blueprint_path": "replace-with-blueprint-path",
+    "blueprint_sha256": null,
+    "source": null,
+    "on_main": true,
+    "developed": false,
+    "launched": false
+  },
+  "state": {
+    "planning": "scaffolded",
+    "indexability": "planning",
+    "freshness": "unknown",
+    "blockers": [
+      "Complete current primary-source and search-landscape research",
+      "Validate independent purpose and portfolio differentiation",
+      "Assign accountable owners and required domain reviewers",
+      "Pass all authority and indexability gates"
+    ]
+  },
+  "owners": {
+    "business": { "name": null, "role": null, "contact": null, "status": "unassigned" },
+    "editorial": { "name": null, "role": null, "contact": null, "status": "unassigned" },
+    "technical": { "name": null, "role": null, "contact": null, "status": "unassigned" },
+    "domain_reviewer": null,
+    "privacy_security": null,
+    "approver": { "name": null, "role": null, "contact": null, "status": "unassigned" }
+  },
+  "classification": {
+    "primary_archetype": "authority",
+    "secondary_archetypes": ["saas"],
+    "sensitivity": ["regulated_industry"],
+    "ymyl_level": "moderate",
+    "geographic_model": "national",
+    "business_model": ["workflow", "managed_service"],
+    "review_intensity": "enhanced",
+    "cohort": null,
+    "priority": "unscored"
+  },
+  "strategy": {
+    "independent_purpose": { "status": "unassessed", "text": "", "evidence": [] },
+    "audiences": [],
+    "jobs_to_be_done": [],
+    "problem": { "status": "unassessed", "text": "", "evidence": [] },
+    "offer": { "status": "unassessed", "text": "", "evidence": [] },
+    "differentiation": { "status": "unassessed", "text": "", "evidence": [] },
+    "boundaries": [],
+    "commercial_model": [],
+    "overlap_assessment": {
+      "status": "unassessed",
+      "related_businesses": [],
+      "decision": "pending",
+      "rationale": ""
+    },
+    "success_metrics": []
+  },
+  "authority": {
+    "thesis": { "status": "unassessed", "text": "", "evidence": [] },
+    "original_value": [],
+    "expertise": [],
+    "first_hand_evidence": [],
+    "methodology": [],
+    "maintenance_model": [],
+    "who_how_why": { "who": "", "how": "", "why": "" }
+  },
+  "research": {
+    "status": "not_started",
+    "source_manifest": "research-manifest.json",
+    "primary_sources": [],
+    "secondary_sources": [],
+    "open_questions": [],
+    "effective_date_dependencies": []
+  },
+  "search": {
+    "topic_boundary": "",
+    "intent_clusters": [],
+    "entities": [],
+    "regulations_standards": [],
+    "query_page_map": [],
+    "collision_status": "unassessed",
+    "competitor_and_gap_notes": []
+  },
+  "site_architecture": {
+    "navigation_model": [],
+    "pages": [],
+    "url_policy": [],
+    "internal_linking_model": [],
+    "excluded_page_patterns": [
+      "token-swapped location, role, industry, regulation, or keyword pages",
+      "pages without a unique purpose, owner, evidence, maintenance rule, and indexability decision"
+    ]
+  },
+  "content": {
+    "launch_portfolio": [],
+    "expansion_backlog": [],
+    "editorial_workflow": [
+      "research",
+      "brief",
+      "draft",
+      "source verification",
+      "domain review when required",
+      "editorial approval",
+      "technical and accessibility validation",
+      "publish noindex",
+      "indexability approval",
+      "monitor",
+      "refresh or retire"
+    ],
+    "review_policy": [],
+    "prohibited_content": [
+      "unsupported consequential claims",
+      "fabricated proof, experts, credentials, results, clients, reviews, or statistics",
+      "scaled or doorway content created primarily for search rankings",
+      "superficial rewriting without substantial original value"
+    ],
+    "newsletter_pillars": []
+  },
+  "utilities": [
+    {
+      "id": "utility-01",
+      "name": "Business-specific original utility to be selected",
+      "type": "assessment",
+      "purpose": "Provide defensible value beyond informational content",
+      "status": "idea",
+      "inputs": [],
+      "outputs": [],
+      "source_basis": [],
+      "risks": [],
+      "reviewers": [],
+      "conversion_role": null
+    }
+  ],
+  "conversion": {
+    "primary_action": "To be determined from the business model and audience intent",
+    "secondary_actions": [],
+    "lead_magnets": [],
+    "forms": [],
+    "newsletter": "undecided",
+    "crm_lifecycle": [],
+    "ethical_constraints": [
+      "No fake urgency, deceptive scarcity, confirm-shaming, hidden fees, or preselected consent",
+      "Collect only data necessary for the stated purpose"
+    ]
+  },
+  "trust": {
+    "authors": [],
+    "reviewers": [],
+    "source_policy": [],
+    "claim_policy": [],
+    "proof_policy": [
+      "Only genuine, permissioned proof may be presented as real",
+      "Pre-launch proof slots must be visibly labeled placeholder or illustrative"
+    ],
+    "disclosures": [],
+    "corrections": []
+  },
+  "technical": {
+    "rendering": "undecided",
+    "canonical_policy": [],
+    "robots_policy": ["Generated and review environments remain noindex"],
+    "sitemap_profiles": [],
+    "redirect_policy": [],
+    "structured_data": [],
+    "localization": [],
+    "monitoring": []
+  },
+  "accessibility": {
+    "status": "planned",
+    "requirements": ["WCAG 2.2 AA minimum", "Manual and assistive-technology review for critical flows"],
+    "owners": [],
+    "evidence": []
+  },
+  "performance": {
+    "status": "planned",
+    "requirements": ["Template budgets", "Core Web Vitals lab and real-user monitoring", "Third-party script governance"],
+    "owners": [],
+    "evidence": []
+  },
+  "privacy_security": {
+    "status": "planned",
+    "requirements": ["Data minimization", "Secure forms and uploads", "Consent and preference management", "Incident and rollback plans"],
+    "owners": [],
+    "evidence": []
+  },
+  "analytics": {
+    "status": "planned",
+    "requirements": ["Consent-aware event taxonomy", "Search, content, tool, lead, conversion, and quality dashboards"],
+    "owners": [],
+    "evidence": []
+  },
+  "offsite_authority": {
+    "status": "planned",
+    "requirements": ["Original citation-worthy assets", "Legitimate expert, media, association, partnership, review, and reputation activity"],
+    "owners": [],
+    "evidence": []
+  },
+  "implementation": {
+    "stage": "scaffolded",
+    "epics": [],
+    "dependencies": [],
+    "migration": [],
+    "launch": [],
+    "operations": []
+  },
+  "gates": [],
+  "provenance": {
+    "generated_at": "2026-07-19T00:00:00Z",
+    "generator": "manual-template",
+    "inputs": [],
+    "human_review": [],
+    "change_log": ["Initial scaffold"]
+  }
+}
