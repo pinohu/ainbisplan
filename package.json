@@ -1,0 +1,19 @@
+{
+  "name": "@ainbis/plan",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@10.13.1",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "build": "pnpm -r --if-present build",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "validate": "node scripts/validate-repository.mjs",
+    "plan:sample": "rm -rf .tmp/plans && node scripts/generate-business-authority-plans.mjs --inventory fixtures/inventory.sample.json --output .tmp/plans --mode scaffold && node scripts/generate-business-authority-plans.mjs --inventory fixtures/inventory.sample.json --output .tmp/plans --mode validate",
+    "check": "pnpm validate && pnpm plan:sample && pnpm build && pnpm typecheck"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}

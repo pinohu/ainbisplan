@@ -1,0 +1,42 @@
+name: Validate design-system foundation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.13.1
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Validate planning and repository structure
+        run: pnpm validate
+
+      - name: Validate per-business plan generation and inventory parity
+        run: pnpm plan:sample
+
+      - name: Build packages
+        run: pnpm build
+
+      - name: Type-check packages
+        run: pnpm typecheck
