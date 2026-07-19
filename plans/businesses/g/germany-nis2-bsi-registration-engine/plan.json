@@ -930,7 +930,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:05:15.210Z",
+    "generated_at": "2026-07-19T07:06:20.762Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260711-13-01-germany-nis2-bsi-registration-engine-blueprint.html"

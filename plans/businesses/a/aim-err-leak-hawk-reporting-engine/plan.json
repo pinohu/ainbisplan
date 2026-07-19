@@ -937,7 +937,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:05:15.040Z",
+    "generated_at": "2026-07-19T07:06:20.555Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260710-08-01-aim-err-leak-hawk-reporting-engine-blueprint.html"

@@ -930,7 +930,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:05:15.418Z",
+    "generated_at": "2026-07-19T07:06:21.010Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260711-01-01-section-1071-coverage-readiness-engine-blueprint.html"

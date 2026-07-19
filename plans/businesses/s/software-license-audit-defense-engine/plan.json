@@ -940,7 +940,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:05:15.433Z",
+    "generated_at": "2026-07-19T07:06:21.027Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260702-19-01-software-license-audit-defense-engine-blueprint.html"

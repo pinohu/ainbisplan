@@ -935,7 +935,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:05:15.086Z",
+    "generated_at": "2026-07-19T07:06:20.614Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260628-06-01-cbam-importer-compliance-desk-blueprint.html"

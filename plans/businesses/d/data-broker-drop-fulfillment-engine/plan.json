@@ -936,7 +936,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:05:15.127Z",
+    "generated_at": "2026-07-19T07:06:20.663Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260710-22-01-data-broker-drop-fulfillment-engine-blueprint.html"
