@@ -10,7 +10,8 @@
     "build": "pnpm -r --if-present build",
     "typecheck": "pnpm -r --if-present typecheck",
     "validate": "node scripts/validate-repository.mjs",
-    "check": "pnpm validate && pnpm build && pnpm typecheck"
+    "plan:sample": "rm -rf .tmp/plans && node scripts/generate-business-authority-plans.mjs --inventory fixtures/inventory.sample.json --output .tmp/plans --mode scaffold && node scripts/generate-business-authority-plans.mjs --inventory fixtures/inventory.sample.json --output .tmp/plans --mode validate",
+    "check": "pnpm validate && pnpm plan:sample && pnpm build && pnpm typecheck"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
