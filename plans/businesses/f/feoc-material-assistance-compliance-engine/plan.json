@@ -937,7 +937,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:48.059Z",
+    "generated_at": "2026-07-19T07:03:13.441Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260702-01-01-feoc-material-assistance-compliance-engine-blueprint.html"

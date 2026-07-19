@@ -942,7 +942,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:48.282Z",
+    "generated_at": "2026-07-19T07:03:13.701Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260630-15-01-radv-audit-defense-engine-blueprint.html"

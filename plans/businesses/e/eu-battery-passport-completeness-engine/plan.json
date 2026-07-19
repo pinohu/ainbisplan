@@ -930,7 +930,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:48.039Z",
+    "generated_at": "2026-07-19T07:03:13.418Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260711-23-01-eu-battery-passport-completeness-engine-blueprint.html"

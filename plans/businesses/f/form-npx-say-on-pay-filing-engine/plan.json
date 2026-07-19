@@ -937,7 +937,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:48.076Z",
+    "generated_at": "2026-07-19T07:03:13.463Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260711-11-01-form-npx-say-on-pay-filing-engine-blueprint.html"

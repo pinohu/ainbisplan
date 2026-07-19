@@ -935,7 +935,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:47.988Z",
+    "generated_at": "2026-07-19T07:03:13.363Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "2026-07-12-2106-contract-to-close-transaction-desk-blueprint.html"

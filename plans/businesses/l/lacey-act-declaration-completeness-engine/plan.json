@@ -932,7 +932,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:48.154Z",
+    "generated_at": "2026-07-19T07:03:13.552Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260709-20-01-lacey-act-declaration-completeness-engine-blueprint.html"

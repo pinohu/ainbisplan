@@ -930,7 +930,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:48.204Z",
+    "generated_at": "2026-07-19T07:03:13.609Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260711-22-01-multi-state-secure-choice-mandate-engine-blueprint.html"
