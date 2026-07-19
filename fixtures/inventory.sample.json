@@ -1,0 +1,25 @@
+{
+  "counts": {
+    "total_businesses": 2
+  },
+  "businesses": [
+    {
+      "slug": "sample-compliance-audit-engine",
+      "title": "Sample Compliance Audit Engine",
+      "source": "fixture",
+      "blueprint_html": "fixtures/blueprints/sample-compliance-audit-engine-blueprint.html",
+      "on_main": true,
+      "developed": true,
+      "launched": true
+    },
+    {
+      "slug": "sample-medical-documentation-desk",
+      "title": "Sample Medical Documentation Desk",
+      "source": "fixture",
+      "blueprint_html": "fixtures/blueprints/sample-medical-documentation-desk-blueprint.html",
+      "on_main": true,
+      "developed": false,
+      "launched": false
+    }
+  ]
+}
