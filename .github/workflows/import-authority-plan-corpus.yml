@@ -1,0 +1,101 @@
+name: Import authority plan corpus
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/import-authority-plan-corpus.yml
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out pull-request branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+
+      - name: Download verified generated corpus
+        env:
+          CORPUS_URL: "https://sdmntprcentralus.oaiusercontent.com/files/00000000-e4e4-81f5-97f3-3b9c5309fa15/raw?se=2026-07-19T06:12:36Z&sp=r&sv=2026-02-06&sr=b&scid=f0da107a-f78b-527c-b83f-ef1f2705ffd9&skoid=a1be202a-6464-476c-a496-723317c4a4db&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-07-19T00:21:55Z&ske=2026-07-21T00:21:55Z&sks=b&skv=2026-02-06&sig=DmJDTIFtEtPuaNY8v%2BvyAW7NLtHqnyxxk299U2VFabU%3D"
+        run: |
+          curl --fail --location --retry 3 --output /tmp/authority-corpus.zip "$CORPUS_URL"
+          echo "23cb6a9fa3788f556532a11b506786e66f341fa615d68d2ce3e5facbeb5ceb30  /tmp/authority-corpus.zip" | sha256sum --check
+          mkdir -p /tmp/authority-corpus
+          unzip -q /tmp/authority-corpus.zip -d /tmp/authority-corpus
+
+      - name: Import generated plans
+        run: |
+          rm -rf plans/businesses
+          mkdir -p plans
+          cp -R /tmp/authority-corpus/corpus/plans/businesses plans/businesses
+          cp /tmp/authority-corpus/corpus/authority-plan-corpus-summary.json plans/authority-plan-corpus-summary.json
+          cp /tmp/authority-corpus/ainbis-authority-plan-corpus.tar.gz.sha256 plans/authority-plan-corpus.tar.gz.sha256
+
+      - name: Validate complete corpus
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const path = require('path');
+          const root = 'plans/businesses';
+          const plans = [];
+          function walk(dir) {
+            for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+              const full = path.join(dir, entry.name);
+              if (entry.isDirectory()) walk(full);
+              else if (entry.name === 'plan.json') plans.push(JSON.parse(fs.readFileSync(full, 'utf8')));
+            }
+          }
+          walk(root);
+          const summary = JSON.parse(fs.readFileSync('plans/authority-plan-corpus-summary.json', 'utf8'));
+          if (plans.length !== 691) throw new Error(`Expected 691 plans, found ${plans.length}`);
+          if (summary.inventory_count !== 691 || summary.plan_count !== 691 || summary.blueprint_hash_count !== 691) {
+            throw new Error(`Invalid corpus summary: ${JSON.stringify(summary)}`);
+          }
+          const missing = plans.filter((plan) => !plan.business?.blueprint_sha256);
+          if (missing.length) throw new Error(`${missing.length} plans are missing blueprint hashes`);
+          const slugs = new Set(plans.map((plan) => plan.business.slug));
+          if (slugs.size !== plans.length) throw new Error('Duplicate business slugs exist in the corpus');
+          console.log(`Validated ${plans.length} unique, blueprint-hashed authority plans.`);
+          NODE
+
+      - name: Refresh portfolio baseline documentation
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const replacements = [
+            ['README.md', [
+              ['currently records 689 businesses', 'currently records 691 businesses'],
+              ['all 689 and to include future businesses', 'all 691 and to include future businesses']
+            ]],
+            ['docs/planning/artifact-index.md', [
+              ['689 normalized businesses', '691 normalized businesses'],
+              ['scaffold all 689 records', 'scaffold all 691 records']
+            ]],
+            ['docs/planning/authority-platform/README.md', [
+              ['currently records 689 businesses', 'currently records 691 businesses']
+            ]]
+          ];
+          for (const [file, pairs] of replacements) {
+            if (!fs.existsSync(file)) continue;
+            let text = fs.readFileSync(file, 'utf8');
+            for (const [from, to] of pairs) text = text.replaceAll(from, to);
+            fs.writeFileSync(file, text);
+          }
+          NODE
+
+      - name: Remove one-time transfer workflow
+        run: rm .github/workflows/import-authority-plan-corpus.yml
+
+      - name: Commit imported corpus
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Import complete AINBIS authority plan corpus"
+          git push origin HEAD:${{ github.head_ref }}
