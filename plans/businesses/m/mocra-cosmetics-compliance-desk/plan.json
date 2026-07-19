@@ -935,7 +935,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:03:13.588Z",
+    "generated_at": "2026-07-19T07:03:56.372Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260628-05-01-mocra-cosmetics-compliance-desk-blueprint.html"
