@@ -15,7 +15,7 @@ Every AINBIS business will receive a complete, individualized authority-site imp
 - explicit anti-duplication, anti-doorway, anti-scaled-content, and cannibalization gates;
 - an implementation manifest that remains synchronized with its blueprint, build, catalog, and runtime status.
 
-The authoritative source inventory currently records 689 businesses, 38 developed builds, and 38 launched microsites. The planning system must cover all current businesses and automatically include newly created businesses as part of the mandatory inventory-regeneration workflow.
+The authoritative source inventory currently records 691 businesses, 38 developed builds, and 38 launched microsites. The planning system must cover all current businesses and automatically include newly created businesses as part of the mandatory inventory-regeneration workflow.
 
 ## Outcomes
 

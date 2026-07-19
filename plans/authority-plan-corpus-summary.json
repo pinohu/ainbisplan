@@ -1,0 +1,15 @@
+{
+  "generated_at": "2026-07-19T06:01:03.721Z",
+  "inventory_count": 691,
+  "plan_count": 691,
+  "blueprint_hash_count": 691,
+  "developed_count": 38,
+  "launched_count": 38,
+  "planning_states": {
+    "scaffolded": 691
+  },
+  "indexability_states": {
+    "public_noindex": 38,
+    "planning": 653
+  }
+}
