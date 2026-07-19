@@ -936,7 +936,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:00:28.317Z",
+    "generated_at": "2026-07-19T07:02:02.267Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260628-07-01-packaging-epr-reporting-desk-blueprint.html"

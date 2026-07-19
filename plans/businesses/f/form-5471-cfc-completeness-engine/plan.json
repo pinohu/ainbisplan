@@ -931,7 +931,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:00:28.128Z",
+    "generated_at": "2026-07-19T07:02:02.182Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260710-11-01-form-5471-cfc-completeness-engine-blueprint.html"

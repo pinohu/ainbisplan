@@ -931,7 +931,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:00:28.134Z",
+    "generated_at": "2026-07-19T07:02:02.185Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260701-12-01-franchise-fdd-renewal-registration-engine-blueprint.html"

@@ -934,7 +934,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:00:28.142Z",
+    "generated_at": "2026-07-19T07:02:02.188Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260712-10-01-ftc-consumer-review-rule-completeness-engine-blueprint.html"

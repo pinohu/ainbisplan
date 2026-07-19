@@ -939,7 +939,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:00:28.017Z",
+    "generated_at": "2026-07-19T07:02:02.109Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260701-05-01-clinicaltrials-gov-results-reporting-engine-blueprint.html"
