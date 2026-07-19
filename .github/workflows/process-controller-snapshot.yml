@@ -1,0 +1,134 @@
+name: Process Mirrored Controller Snapshot
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - controller/input/controller_snapshot.generated.json
+      - scripts/generate-business-authority-plans.mjs
+      - scripts/controller/reconcile-snapshot.mjs
+      - packages/authority-platform/**
+      - controller/config.json
+      - .github/workflows/process-controller-snapshot.yml
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: process-controller-snapshot
+  cancel-in-progress: true
+
+jobs:
+  process:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.13.1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Require mirrored controller snapshot
+        run: test -f controller/input/controller_snapshot.generated.json
+
+      - name: Install dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Refresh every authority plan from trusted snapshot hashes
+        run: |
+          node scripts/generate-business-authority-plans.mjs \
+            --inventory controller/input/controller_snapshot.generated.json \
+            --output plans/businesses \
+            --mode refresh \
+            --source-repository pinohu/ainbis
+
+      - name: Execute authority platform across the full corpus
+        run: pnpm execute:portfolio
+
+      - name: Reconcile controller state from embedded source and launchpad evidence
+        run: |
+          node scripts/controller/reconcile-snapshot.mjs \
+            --inventory controller/input/controller_snapshot.generated.json \
+            --plans-root plans/businesses \
+            --mode snapshot
+
+      - name: Validate exact parity, controller state, packages, and types
+        run: |
+          node scripts/generate-business-authority-plans.mjs \
+            --inventory controller/input/controller_snapshot.generated.json \
+            --output plans/businesses \
+            --mode validate
+          pnpm validate:execution
+          pnpm controller:validate
+          pnpm typecheck
+
+      - name: Refresh canonical corpus summary
+        run: |
+          jq '{
+            generated_at,
+            inventory_count,
+            plan_count,
+            blueprint_hash_count,
+            developed_count,
+            launched_count,
+            planning_states: {},
+            indexability_states: {}
+          }' plans/businesses/summary.json > plans/authority-plan-corpus-summary.json
+
+      - name: Synchronize exception issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          title="Autonomous portfolio exceptions"
+          body_file="controller/exceptions/owner-exceptions.md"
+          issue_number="$(gh issue list --state open --search \"${title} in:title\" --json number --jq '.[0].number // empty')"
+          if [ -n "$issue_number" ]; then
+            gh issue edit "$issue_number" --title "$title" --body-file "$body_file"
+          else
+            gh issue create --title "$title" --body-file "$body_file"
+          fi
+
+      - name: Commit synchronized plan and controller state
+        run: |
+          set -euo pipefail
+          git config user.name "ainbis-controller[bot]"
+          git config user.email "ainbis-controller[bot]@users.noreply.github.com"
+          git add \
+            plans/businesses \
+            plans/authority-plan-corpus-summary.json \
+            reports/portfolio \
+            apps/portfolio-console/data.json \
+            controller/state \
+            controller/reports \
+            controller/exceptions
+          if git diff --cached --quiet; then
+            echo "Controller state is already synchronized."
+            exit 0
+          fi
+          count="$(jq -r '.reconciliation.source_count' controller/state/controller-state.json)"
+          source_sha="$(jq -r '.source.source_commit' controller/state/controller-state.json)"
+          git commit -m "Synchronize controller state (${count} businesses) [controller-sync]" \
+            -m "Source pinohu/ainbis@${source_sha}; plan, catalog, build, and exception state reconciled."
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Upload controller evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: processed-controller-state
+          path: |
+            controller/state/
+            controller/reports/
+            controller/exceptions/
+          if-no-files-found: error
+          retention-days: 30
