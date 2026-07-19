@@ -1,4 +1,4 @@
-name: Validate design-system and authority platform
+name: Validate design-system, authority platform, and controller
 
 on:
   pull_request:
@@ -34,6 +34,9 @@ jobs:
 
       - name: Validate per-business plan generation and inventory parity
         run: pnpm plan:sample
+
+      - name: Validate autonomous controller fixture
+        run: pnpm controller:fixture
 
       - name: Build packages
         run: pnpm build

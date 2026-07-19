@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "controller": {
+    "name": "AINBIS Controller Fixture",
+    "organization": "Fixture",
+    "mode": "exception_only",
+    "cadence": "manual",
+    "source_repository": "fixture/source",
+    "planning_repository": "fixture/plan",
+    "launchpad_repository": "fixture/launchpad"
+  },
+  "automation": {
+    "auto_deploy_public_noindex": false
+  },
+  "operating_model": {
+    "portfolio_operator": { "status": "active" },
+    "reviewer_network": { "status": "active" }
+  },
+  "release_zero": {
+    "slug": "sample-compliance-audit-engine",
+    "public_name": "Sample Compliance Audit Engine",
+    "target_state": "operating"
+  }
+}

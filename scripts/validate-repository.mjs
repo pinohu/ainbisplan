@@ -15,6 +15,18 @@ const authorityArtifacts = [
   "authority-platform/source-standards.md"
 ];
 
+const controllerPaths = [
+  "controller/README.md",
+  "controller/config.json",
+  "docs/planning/autonomous-controller/README.md",
+  "scripts/controller/io.mjs",
+  "scripts/controller/catalog.mjs",
+  "scripts/controller/policy.mjs",
+  "scripts/controller/reconcile.mjs",
+  "scripts/controller/validate.mjs",
+  "fixtures/controller.config.sample.json"
+];
+
 const requiredPaths = [
   "README.md",
   "package.json",
@@ -28,6 +40,7 @@ const requiredPaths = [
   "docs/planning/decisions/ADR-001-federated-design-system.md",
   "docs/planning/generated/README.md",
   ...authorityArtifacts.map((artifact) => `docs/planning/${artifact}`),
+  ...controllerPaths,
   "docs/governance/contribution-model.md",
   "schemas/business-authority-plan.schema.json",
   "templates/business-authority-plan.template.json",
@@ -55,7 +68,6 @@ for (const relativePath of requiredPaths) {
 
 const planningIndexPath = path.join(root, "docs/planning/artifact-index.md");
 let planningIndex = "";
-
 try {
   planningIndex = await readFile(planningIndexPath, "utf8");
 } catch {
@@ -69,13 +81,12 @@ for (const artifact of [
   "decisions/ADR-001-federated-design-system.md",
   "generated/README.md",
   ...authorityArtifacts,
+  "autonomous-controller/README.md",
   "schemas/business-authority-plan.schema.json",
   "templates/business-authority-plan.template.json",
   "scripts/generate-business-authority-plans.mjs"
 ]) {
-  if (!planningIndex.includes(artifact)) {
-    errors.push(`Planning artifact is not indexed: ${artifact}`);
-  }
+  if (!planningIndex.includes(artifact)) errors.push(`Planning artifact is not indexed: ${artifact}`);
 }
 
 const generatedDirectory = path.join(root, "docs/planning/generated");
@@ -92,7 +103,9 @@ try {
 for (const jsonPath of [
   "schemas/business-authority-plan.schema.json",
   "templates/business-authority-plan.template.json",
-  "fixtures/inventory.sample.json"
+  "fixtures/inventory.sample.json",
+  "fixtures/controller.config.sample.json",
+  "controller/config.json"
 ]) {
   try {
     JSON.parse(await readFile(path.join(root, jsonPath), "utf8"));
