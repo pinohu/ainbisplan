@@ -1,0 +1,72 @@
+[
+  {
+    "category": "launched_regulated",
+    "slug": "340b-compliance-audit-engine",
+    "title": "340B Program-Integrity & Independent Audit Engine Done-for-you, HRSA-defensible 340B compliance: an independent audit opinion + claim-by-claim integrity + recaptured savings — priced per audited claim and per audit",
+    "rationale": [
+      "Proves preservation-first migration for an existing regulated site.",
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ]
+  },
+  {
+    "category": "high_risk",
+    "slug": "ada-wcag-accessibility-litigation-defense-engine",
+    "title": "AccessLock — The ADA Title III / WCAG Accessibility Audit, Remediation & Litigation-Defense Engine",
+    "rationale": [
+      "Proves qualified review and high-consequence content controls.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ]
+  },
+  {
+    "category": "professional_service",
+    "slug": "501r-community-benefit-compliance-engine",
+    "title": "501(r) Financial-Assistance & Community-Benefit Compliance Engine",
+    "rationale": [
+      "Proves trust, scope, pricing posture, intake, and service conversion.",
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ]
+  },
+  {
+    "category": "saas_workflow",
+    "slug": "fema-public-assistance-recovery-engine",
+    "title": "Reoblige — The FEMA Public Assistance Documentation, Recovery & Appeals Engine",
+    "rationale": [
+      "Proves guided workflow, progress, output, review, and auditability.",
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ]
+  },
+  {
+    "category": "local_jurisdiction",
+    "slug": "sd-county-sqg-medical-waste-registration-completeness-pack-engine",
+    "title": "MedWasteClear — San Diego County SQG Medical Waste Registration Completeness Pack",
+    "rationale": [
+      "Proves jurisdiction and location architecture without doorway pages.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ]
+  },
+  {
+    "category": "tool_intensive",
+    "slug": "hud-multifamily-hotma-tracs-compliance-engine",
+    "title": "RentCert — The HUD Multifamily HOTMA Recertification & TRACS Voucher Compliance Engine",
+    "rationale": [
+      "Proves original utility, source basis, risk review, and measurable engagement.",
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ]
+  }
+]

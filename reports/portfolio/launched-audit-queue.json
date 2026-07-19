@@ -1,0 +1,506 @@
+[
+  {
+    "slug": "340b-compliance-audit-engine",
+    "score": 84,
+    "priority": "critical",
+    "cohort": "healthcare-compliance-and-reimbursement",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "501r-community-benefit-compliance-engine",
+    "score": 82,
+    "priority": "critical",
+    "cohort": "employment-and-benefits",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "agency-direct-bill-commission-recovery-desk",
+    "score": 80,
+    "priority": "critical",
+    "cohort": "financial-tax-audit-and-reporting",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "esa-scholarship-revenue-cycle-desk",
+    "score": 80,
+    "priority": "critical",
+    "cohort": "financial-tax-audit-and-reporting",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "fema-public-assistance-recovery-engine",
+    "score": 80,
+    "priority": "critical",
+    "cohort": "government-contracting-and-grants",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "hoa-condo-assessment-delinquency-notice-collections-desk",
+    "score": 80,
+    "priority": "critical",
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "home-warranty-contractor-authorization-desk",
+    "score": 80,
+    "priority": "critical",
+    "cohort": "government-contracting-and-grants",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "hud-multifamily-hotma-tracs-compliance-engine",
+    "score": 80,
+    "priority": "critical",
+    "cohort": "real-estate-housing-construction-and-facilities",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "mhc-notice-disclosure-compliance-desk",
+    "score": 80,
+    "priority": "critical",
+    "cohort": "real-estate-housing-construction-and-facilities",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "special-needs-trust-able-disbursement-compliance-desk",
+    "score": 80,
+    "priority": "critical",
+    "cohort": "employment-and-benefits",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "veterinary-insurance-claims-case-acceptance-desk",
+    "score": 80,
+    "priority": "critical",
+    "cohort": "financial-tax-audit-and-reporting",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "401k-delinquent-deposit-correction-engine",
+    "score": 78,
+    "priority": "critical",
+    "cohort": "financial-tax-audit-and-reporting",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "ab1305-vcm-disclosure-engine",
+    "score": 78,
+    "priority": "critical",
+    "cohort": "insurance-claims-and-revenue-recovery",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "co-crs-38-12-803-radon-disclosure-completeness-desk",
+    "score": 78,
+    "priority": "critical",
+    "cohort": "real-estate-housing-construction-and-facilities",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "farm-disaster-relief-claims-completeness-pack-engine",
+    "score": 78,
+    "priority": "critical",
+    "cohort": "insurance-claims-and-revenue-recovery",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "fl-marina-possessory-lien-notice-completeness-pack-engine",
+    "score": 78,
+    "priority": "critical",
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "freight-claims-recovery-desk",
+    "score": 78,
+    "priority": "critical",
+    "cohort": "insurance-claims-and-revenue-recovery",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "private-property-tow-authorization-completeness-desk",
+    "score": 78,
+    "priority": "critical",
+    "cohort": "real-estate-housing-construction-and-facilities",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "restaurant-delivery-dispute-payout-recovery-desk",
+    "score": 78,
+    "priority": "critical",
+    "cohort": "insurance-claims-and-revenue-recovery",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "High-YMYL consequences require early governance.",
+      "Qualified reviewer assignment is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "aim-act-leak-repair-completeness-pack-engine",
+    "score": 58,
+    "priority": "high",
+    "cohort": "environmental-and-safety",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Moderate-YMYL review burden.",
+      "Enhanced review is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "ny-gol-7108-deposit-itemization-deadline-desk",
+    "score": 58,
+    "priority": "high",
+    "cohort": "privacy-cybersecurity-ai-data-and-communications",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Moderate-YMYL review burden.",
+      "Enhanced review is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "rubs-compliance-completeness-pack-engine",
+    "score": 58,
+    "priority": "high",
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Moderate-YMYL review burden.",
+      "Enhanced review is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "specialty-trade-product-data-submittal-completeness-desk",
+    "score": 58,
+    "priority": "high",
+    "cohort": "transportation-logistics-trade-and-import-export",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Moderate-YMYL review burden.",
+      "Enhanced review is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "timeshare-exit-deedback-compliance-desk",
+    "score": 58,
+    "priority": "high",
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Moderate-YMYL review burden.",
+      "Enhanced review is required.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": true,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "a2p-10dlc-brand-campaign-approval-completeness-pack-engine",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "privacy-cybersecurity-ai-data-and-communications",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "b2b-invoice-collections-ar-recovery-desk",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "insurance-claims-and-revenue-recovery",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "ca-adde-allergen-menu-completeness-pack-engine",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "ca-hoa-annual-reserve-disclosure-completeness-pack-engine",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "carrier-detention-accessorial-recovery-desk",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "transportation-logistics-trade-and-import-export",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "ccrc-continuing-care-disclosure-actuarial-readiness-desk",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "collision-supplement-evidence-pack-engine",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "dealer-out-of-state-title-registration-desk",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "privacy-cybersecurity-ai-data-and-communications",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "elevator-mcp-completeness-pack-engine",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "funeral-rule-gpl-completeness-pack-engine",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "nyc-outdoor-dining-permit-completeness-pack-engine",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "pole-attachment-permit-desk",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "snow-ice-storm-event-defense-desk",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  },
+  {
+    "slug": "specialty-trade-cor-tm-completeness-desk",
+    "score": 39,
+    "priority": "medium",
+    "cohort": "transportation-logistics-trade-and-import-export",
+    "reasons": [
+      "Existing launched property requires preservation-first audit.",
+      "Original utility opportunity is already represented in the scaffold."
+    ],
+    "reviewerRequired": false,
+    "launchedAuditRequired": true
+  }
+]

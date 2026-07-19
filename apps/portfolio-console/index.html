@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AINBIS Authority Portfolio Console</title>
+  <style>
+    :root { color-scheme: light dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+    body { margin: 0; background: Canvas; color: CanvasText; }
+    main { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+    header { display: grid; gap: .5rem; margin-bottom: 1.5rem; }
+    h1, h2 { margin: 0; }
+    p { max-width: 78ch; }
+    .metrics, .references { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .75rem; margin: 1rem 0 1.5rem; }
+    .card { border: 1px solid color-mix(in srgb, CanvasText 20%, transparent); border-radius: .75rem; padding: 1rem; background: color-mix(in srgb, Canvas 96%, CanvasText 4%); }
+    .value { font-size: 1.75rem; font-weight: 700; display: block; }
+    .controls { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: .75rem; margin: 1rem 0; }
+    label { display: grid; gap: .35rem; font-weight: 600; }
+    input, select { font: inherit; padding: .65rem; border-radius: .5rem; border: 1px solid color-mix(in srgb, CanvasText 30%, transparent); background: Canvas; color: CanvasText; }
+    table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+    th, td { padding: .65rem; border-bottom: 1px solid color-mix(in srgb, CanvasText 18%, transparent); text-align: left; vertical-align: top; }
+    th { position: sticky; top: 0; background: Canvas; }
+    .table-wrap { overflow-x: auto; border: 1px solid color-mix(in srgb, CanvasText 20%, transparent); border-radius: .75rem; }
+    .badge { display: inline-block; padding: .2rem .5rem; border-radius: 999px; border: 1px solid currentColor; font-size: .78rem; }
+    .muted { opacity: .72; }
+    .empty { padding: 2rem; text-align: center; }
+    a { color: LinkText; }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>AINBIS Authority Portfolio Console</h1>
+    <p>Execution triage for every authority plan. Automated classifications and scores support prioritization; they do not replace research, qualified review, or indexability approval.</p>
+    <span id="generated" class="muted">Loading portfolio data…</span>
+  </header>
+
+  <section aria-labelledby="metrics-heading">
+    <h2 id="metrics-heading">Portfolio status</h2>
+    <div id="metrics" class="metrics"></div>
+  </section>
+
+  <section aria-labelledby="reference-heading">
+    <h2 id="reference-heading">Reference implementations</h2>
+    <div id="references" class="references"></div>
+  </section>
+
+  <section aria-labelledby="plans-heading">
+    <h2 id="plans-heading">Business execution queue</h2>
+    <div class="controls">
+      <label>Search
+        <input id="search" type="search" placeholder="Slug, cohort, or reason">
+      </label>
+      <label>Priority
+        <select id="priority"><option value="">All priorities</option><option>critical</option><option>high</option><option>medium</option><option>low</option></select>
+      </label>
+      <label>Cohort
+        <select id="cohort"><option value="">All cohorts</option></select>
+      </label>
+      <label>Queue
+        <select id="queue"><option value="">All plans</option><option value="launched">Launched audit</option><option value="reviewer">Qualified review</option></select>
+      </label>
+    </div>
+    <p id="result-count" aria-live="polite"></p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Business</th><th>Priority</th><th>Cohort</th><th>Score</th><th>Queues</th><th>Blocking findings</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+      <div id="empty" class="empty" hidden>No matching businesses.</div>
+    </div>
+  </section>
+</main>
+<script type="module">
+  const data = await fetch('./data.json').then((response) => {
+    if (!response.ok) throw new Error(`Unable to load data: ${response.status}`);
+    return response.json();
+  });
+  const readiness = new Map(data.readiness.map((item) => [item.slug, item]));
+  const controls = {
+    search: document.querySelector('#search'),
+    priority: document.querySelector('#priority'),
+    cohort: document.querySelector('#cohort'),
+    queue: document.querySelector('#queue')
+  };
+
+  document.querySelector('#generated').textContent = `Generated ${new Date(data.generated_at).toLocaleString()} · ${data.total_plans} plans`;
+  const metricEntries = [
+    ['Total plans', data.total_plans],
+    ['Critical', data.priority_counts.critical ?? 0],
+    ['High', data.priority_counts.high ?? 0],
+    ['Cohorts', Object.keys(data.cohorts).length]
+  ];
+  document.querySelector('#metrics').innerHTML = metricEntries.map(([label, value]) => `<div class="card"><span class="value">${value}</span><span>${label}</span></div>`).join('');
+  document.querySelector('#references').innerHTML = data.references.map((item) => `<article class="card"><strong>${item.category.replaceAll('_', ' ')}</strong><p><code>${item.slug}</code></p><p class="muted">${item.rationale[0]}</p></article>`).join('');
+
+  for (const cohort of Object.keys(data.cohorts).sort()) {
+    const option = document.createElement('option');
+    option.value = cohort;
+    option.textContent = cohort;
+    controls.cohort.append(option);
+  }
+
+  function render() {
+    const query = controls.search.value.trim().toLowerCase();
+    const filtered = data.assessments.filter((item) => {
+      const haystack = `${item.slug} ${item.cohort} ${item.reasons.join(' ')}`.toLowerCase();
+      if (query && !haystack.includes(query)) return false;
+      if (controls.priority.value && item.priority !== controls.priority.value) return false;
+      if (controls.cohort.value && item.cohort !== controls.cohort.value) return false;
+      if (controls.queue.value === 'launched' && !item.launchedAuditRequired) return false;
+      if (controls.queue.value === 'reviewer' && !item.reviewerRequired) return false;
+      return true;
+    });
+    document.querySelector('#result-count').textContent = `${filtered.length} matching businesses`;
+    document.querySelector('#empty').hidden = filtered.length !== 0;
+    document.querySelector('#rows').innerHTML = filtered.slice(0, 500).map((item) => {
+      const finding = readiness.get(item.slug) ?? { blockers: 0 };
+      const queues = [item.launchedAuditRequired ? 'launched audit' : '', item.reviewerRequired ? 'qualified review' : ''].filter(Boolean).join(', ') || 'standard';
+      return `<tr><td><code>${item.slug}</code><br><span class="muted">${item.reasons[0] ?? ''}</span></td><td><span class="badge">${item.priority}</span></td><td>${item.cohort}</td><td>${item.score}</td><td>${queues}</td><td>${finding.blockers}</td></tr>`;
+    }).join('');
+  }
+  Object.values(controls).forEach((control) => control.addEventListener('input', render));
+  render();
+</script>
+</body>
+</html>
