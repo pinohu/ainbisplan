@@ -930,7 +930,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:02.084Z",
+    "generated_at": "2026-07-19T07:02:25.906Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260712-00-01-bis-affiliates-ownership-diligence-engine-blueprint.html"

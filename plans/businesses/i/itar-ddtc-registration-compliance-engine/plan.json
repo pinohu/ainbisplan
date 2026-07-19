@@ -936,7 +936,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:02.220Z",
+    "generated_at": "2026-07-19T07:02:26.154Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260701-17-01-itar-ddtc-registration-compliance-engine-blueprint.html"
