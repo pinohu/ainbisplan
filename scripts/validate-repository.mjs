@@ -4,6 +4,17 @@ import process from "node:process";
 
 const root = process.cwd();
 
+const authorityArtifacts = [
+  "authority-platform/README.md",
+  "authority-platform/feature-catalog.md",
+  "authority-platform/per-business-plan-contract.md",
+  "authority-platform/implementation-architecture.md",
+  "authority-platform/programmatic-seo-network-safety.md",
+  "authority-platform/delivery-program.md",
+  "authority-platform/quality-gates.md",
+  "authority-platform/source-standards.md"
+];
+
 const requiredPaths = [
   "README.md",
   "package.json",
@@ -16,7 +27,12 @@ const requiredPaths = [
   "docs/planning/implementation-roadmap.md",
   "docs/planning/decisions/ADR-001-federated-design-system.md",
   "docs/planning/generated/README.md",
+  ...authorityArtifacts.map((artifact) => `docs/planning/${artifact}`),
   "docs/governance/contribution-model.md",
+  "schemas/business-authority-plan.schema.json",
+  "templates/business-authority-plan.template.json",
+  "scripts/generate-business-authority-plans.mjs",
+  "fixtures/inventory.sample.json",
   "packages/tokens/package.json",
   "packages/core/package.json",
   "packages/archetypes/package.json",
@@ -47,7 +63,11 @@ for (const artifact of [
   "project-system-map.md",
   "implementation-roadmap.md",
   "decisions/ADR-001-federated-design-system.md",
-  "generated/README.md"
+  "generated/README.md",
+  ...authorityArtifacts,
+  "schemas/business-authority-plan.schema.json",
+  "templates/business-authority-plan.template.json",
+  "scripts/generate-business-authority-plans.mjs"
 ]) {
   if (!planningIndex.includes(artifact)) {
     errors.push(`Planning artifact is not indexed: ${artifact}`);
@@ -66,6 +86,18 @@ try {
   }
 } catch {
   errors.push("Unable to inspect docs/planning/generated");
+}
+
+for (const jsonPath of [
+  "schemas/business-authority-plan.schema.json",
+  "templates/business-authority-plan.template.json",
+  "fixtures/inventory.sample.json"
+]) {
+  try {
+    JSON.parse(await readFile(path.join(root, jsonPath), "utf8"));
+  } catch (error) {
+    errors.push(`Invalid JSON in ${jsonPath}: ${error.message}`);
+  }
 }
 
 const packageDirectories = ["tokens", "core", "archetypes", "brand-engine"];
