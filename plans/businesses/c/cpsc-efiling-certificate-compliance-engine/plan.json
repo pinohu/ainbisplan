@@ -937,7 +937,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:25.974Z",
+    "generated_at": "2026-07-19T07:02:47.991Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260702-04-01-cpsc-efiling-certificate-compliance-engine-blueprint.html"

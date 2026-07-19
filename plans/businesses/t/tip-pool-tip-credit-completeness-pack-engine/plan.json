@@ -931,7 +931,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:26.395Z",
+    "generated_at": "2026-07-19T07:02:48.366Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/2026-07-12-1104-tip-pool-tip-credit-completeness-pack-engine-blueprint.html"

@@ -938,7 +938,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:26.032Z",
+    "generated_at": "2026-07-19T07:02:48.041Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260630-14-01-eu-pay-transparency-reporting-engine-blueprint.html"

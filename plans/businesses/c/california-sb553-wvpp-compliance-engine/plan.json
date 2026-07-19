@@ -936,7 +936,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:25.924Z",
+    "generated_at": "2026-07-19T07:02:47.945Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260711-00-01-california-sb553-wvpp-compliance-engine-blueprint.html"

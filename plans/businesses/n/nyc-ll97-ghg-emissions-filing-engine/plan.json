@@ -938,7 +938,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:26.246Z",
+    "generated_at": "2026-07-19T07:02:48.234Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260710-00-01-nyc-ll97-ghg-emissions-filing-engine-blueprint.html"

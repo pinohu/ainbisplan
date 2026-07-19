@@ -931,7 +931,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:26.337Z",
+    "generated_at": "2026-07-19T07:02:48.315Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260712-09-01-sb942-ai-transparency-completeness-pack-engine-blueprint.html"

@@ -937,7 +937,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:25.874Z",
+    "generated_at": "2026-07-19T07:02:47.895Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260711-21-01-aim-err-fire-suppression-compliance-engine-blueprint.html"

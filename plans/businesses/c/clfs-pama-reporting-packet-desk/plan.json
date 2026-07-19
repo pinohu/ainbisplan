@@ -936,7 +936,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:02:25.948Z",
+    "generated_at": "2026-07-19T07:02:47.967Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260628-21-01-clfs-pama-reporting-packet-desk-blueprint.html"
