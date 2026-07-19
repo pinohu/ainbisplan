@@ -1,0 +1,107 @@
+[
+  {
+    "left": "mhpaea-nqtl-parity-analysis-engine",
+    "right": "mhpaea-nqtl-parity-comparative-analysis-engine",
+    "score": 0.833
+  },
+  {
+    "left": "hospital-price-transparency-compliance-engine",
+    "right": "hospital-price-transparency-remediation",
+    "score": 0.75
+  },
+  {
+    "left": "prop65-warning-compliance-engine",
+    "right": "prop65-warning-determination-engine",
+    "score": 0.625
+  },
+  {
+    "left": "blue-sky-reg-d-notice-filing-engine",
+    "right": "reg-d-blue-sky-filing-engine",
+    "score": 0.6
+  },
+  {
+    "left": "dependent-eligibility-verification-engine",
+    "right": "dependent-eligibility-verification-recovery-desk",
+    "score": 0.6
+  },
+  {
+    "left": "specialty-trade-aia-pay-app-completeness-desk",
+    "right": "specialty-trade-cor-tm-completeness-desk",
+    "score": 0.6
+  },
+  {
+    "left": "i9-everify-audit-defense-engine",
+    "right": "i9-everify-audit-remediation-engine",
+    "score": 0.571
+  },
+  {
+    "left": "commercial-financing-disclosure-compliance-engine",
+    "right": "mca-commercial-financing-disclosure-compliance-engine",
+    "score": 0.556
+  },
+  {
+    "left": "veterinary-controlled-substance-dea-audit-defense-engine",
+    "right": "veterinary-dea-controlled-substance-compliance-engine",
+    "score": 0.545
+  },
+  {
+    "left": "baba-domestic-content-certification-engine",
+    "right": "baba-domestic-content-compliance-engine",
+    "score": 0.5
+  },
+  {
+    "left": "bps-emissions-compliance-engine",
+    "right": "building-emissions-bps-compliance-engine",
+    "score": 0.5
+  },
+  {
+    "left": "cpsc-efiling-certificate-compliance-engine",
+    "right": "cpsc-efiling-readiness-desk",
+    "score": 0.5
+  },
+  {
+    "left": "distributor-deduction-recovery-desk",
+    "right": "retail-deduction-recovery-engine",
+    "score": 0.5
+  },
+  {
+    "left": "eudr-deforestation-due-diligence-engine",
+    "right": "eudr-due-diligence-packet-desk",
+    "score": 0.5
+  },
+  {
+    "left": "fdd-renewal-registration-engine",
+    "right": "franchise-fdd-renewal-registration-engine",
+    "score": 0.5
+  },
+  {
+    "left": "h2a-labor-certification-season-compliance-engine",
+    "right": "h2b-labor-certification-filing-engine",
+    "score": 0.5
+  },
+  {
+    "left": "multi-state-packaging-epr-producer-compliance-desk",
+    "right": "packaging-epr-filing-desk",
+    "score": 0.5
+  },
+  {
+    "left": "nydfs-part-500-certification-evidence-desk",
+    "right": "nydfs-part500-certification-evidence-engine",
+    "score": 0.5
+  },
+  {
+    "left": "prevailing-wage-certified-payroll-engine",
+    "right": "specialty-trade-certified-payroll-prevailing-wage-desk",
+    "score": 0.5
+  },
+  {
+    "left": "software-license-audit-defense-desk",
+    "right": "software-license-audit-defense-engine",
+    "score": 0.5
+  },
+  {
+    "left": "unclaimed-property-compliance-engine",
+    "right": "unclaimed-property-holder-compliance-engine",
+    "score": 0.5
+  }
+]

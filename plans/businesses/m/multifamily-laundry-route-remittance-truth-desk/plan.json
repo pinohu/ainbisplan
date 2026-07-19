@@ -15,7 +15,7 @@
     "launched": false
   },
   "state": {
-    "planning": "scaffolded",
+    "planning": "research_required",
     "indexability": "planning",
     "freshness": "current",
     "blockers": [
@@ -23,7 +23,10 @@
       "Validate independent purpose and portfolio differentiation",
       "Assign accountable owners and required reviewers",
       "Specify original utility, launch content graph, conversion, and operating model",
-      "Pass all authority and indexability gates"
+      "Pass all authority and indexability gates",
+      "Complete current business-specific research and source verification.",
+      "Approve independent purpose, portfolio differentiation, and query/entity ownership.",
+      "Complete original utility, content graph, conversion, operating model, and all mandatory gates."
     ]
   },
   "owners": {
@@ -73,8 +76,8 @@
       "managed_service"
     ],
     "review_intensity": "standard",
-    "cohort": "general-regulatory-and-workflow",
-    "priority": "unscored"
+    "cohort": "professional-documentation-and-evidence-workflows",
+    "priority": "low"
   },
   "strategy": {
     "independent_purpose": {
@@ -218,16 +221,41 @@
     "corrections": []
   },
   "technical": {
-    "rendering": "undecided",
-    "canonical_policy": [],
-    "robots_policy": [
-      "Generated and review environments remain noindex"
+    "rendering": "server_rendered",
+    "canonical_policy": [
+      "Every indexable URL has one absolute HTTPS self-referencing canonical unless an approved equivalent owns the canonical.",
+      "Canonical targets must return 200, remain indexable, and not redirect."
     ],
-    "sitemap_profiles": [],
-    "redirect_policy": [],
-    "structured_data": [],
+    "robots_policy": [
+      "Generated and review environments remain noindex",
+      "Keep generated, review, and incomplete surfaces noindex.",
+      "Do not block resources required to render or evaluate public content."
+    ],
+    "sitemap_profiles": [
+      "indexable canonical 200 URLs only",
+      "separate image/video/news sitemaps only when the content type exists"
+    ],
+    "redirect_policy": [
+      "Use one-hop permanent redirects only for genuine replacements.",
+      "Never redirect unrelated retired content to the homepage."
+    ],
+    "structured_data": [
+      "Organization",
+      "WebSite",
+      "BreadcrumbList",
+      "WebPage",
+      "Article or Service when visible content supports it"
+    ],
     "localization": [],
-    "monitoring": []
+    "monitoring": [
+      "crawl status",
+      "indexation",
+      "canonical drift",
+      "robots drift",
+      "sitemap health",
+      "structured-data validity",
+      "Core Web Vitals"
+    ]
   },
   "accessibility": {
     "status": "planned",
@@ -278,16 +306,33 @@
     "evidence": []
   },
   "implementation": {
-    "stage": "scaffolded",
+    "stage": "researching",
     "epics": [
       {
         "id": "epic-01",
         "name": "Discovery, sources, and differentiation",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Complete primary-source, market, search, and portfolio-overlap research.",
+          "Approve independent purpose, boundaries, and differentiation."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -295,9 +340,26 @@
         "name": "Audience, offer, and commercial validation",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Validate audience, jobs, offer, commercial model, scope, and ethical conversion.",
+          "Document assumptions requiring market validation."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -305,9 +367,26 @@
         "name": "Brand and design-system configuration",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Generate and review governed brand profile.",
+          "Apply accessible tokens and archetype-specific layout rules."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -315,9 +394,26 @@
         "name": "Content and entity models",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Define topics, entities, regulations, jurisdictions, content types, and ownership.",
+          "Create versioned content and entity models."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -325,9 +421,26 @@
         "name": "Information architecture and URL plan",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Define navigation, URLs, page purposes, indexability, and internal-linking model.",
+          "Block doorway, duplicate, and unsupported page patterns."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -335,9 +448,26 @@
         "name": "Authority content and trust pages",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Produce authority launch portfolio and trust-policy pages.",
+          "Assign authors, reviewers, sources, review dates, and corrections paths."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -345,9 +475,26 @@
         "name": "Product, service, or workflow experience",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Implement truthful product, service, workflow, pricing posture, and boundaries.",
+          "Validate all consequential states and recovery paths."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -355,9 +502,26 @@
         "name": "Original utility and lead magnets",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Specify and build at least one original utility or evidence asset.",
+          "Validate source basis, risks, outputs, and conversion role."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -365,9 +529,26 @@
         "name": "Editorial and domain-review operations",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Implement research, drafting, fact-check, domain-review, approval, refresh, and retirement workflow.",
+          "Record accountability and change history."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -375,9 +556,26 @@
         "name": "Technical SEO, structured data, and internal linking",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Implement metadata, canonicals, robots, sitemaps, redirects, schema, and link-graph controls.",
+          "Pass crawl, rendering, duplication, and structured-data checks."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -385,9 +583,26 @@
         "name": "Lead capture, newsletter, CRM, and lifecycle",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Implement consent-aware forms, lead magnets, newsletter, CRM stages, and nurture.",
+          "Validate deliverability, preferences, data minimization, and ethical constraints."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -395,9 +610,26 @@
         "name": "Analytics, attribution, experimentation, and dashboards",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Implement event taxonomy, attribution, dashboards, experimentation, and decision logs.",
+          "Separate business, search, quality, and safety metrics."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -405,9 +637,26 @@
         "name": "Accessibility, performance, security, privacy, and legal review",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Pass accessibility, Core Web Vitals, security, privacy, and legal review.",
+          "Document evidence, exceptions, owners, and remediation."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -415,9 +664,26 @@
         "name": "Off-site authority, partnerships, reviews, and reputation",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Establish original research, expert outreach, partnerships, reviews, digital PR, and reputation monitoring.",
+          "Prohibit paid or manipulative authority signals."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -425,9 +691,26 @@
         "name": "Migration, launch, indexation, monitoring, and rollback",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Create migration, redirect, rollout, indexation, monitoring, rollback, and incident plans.",
+          "Preserve valid URLs, analytics, leads, and search equity."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       },
       {
@@ -435,16 +718,53 @@
         "name": "Continuous content, regulatory, product, and technical maintenance",
         "status": "planned",
         "owner": null,
-        "deliverables": [],
-        "dependencies": [],
-        "acceptance_criteria": [],
+        "deliverables": [
+          "Establish editorial, regulatory, product, technical, accessibility, performance, security, and reputation operations.",
+          "Define recurring review cadence and retirement triggers."
+        ],
+        "dependencies": [
+          "@ainbis/tokens",
+          "@ainbis/core",
+          "@ainbis/archetypes",
+          "@ainbis/brand-engine",
+          "@ainbis/authority-platform",
+          "authority content models",
+          "editorial and domain-review workflow",
+          "SEO, schema, internal-linking, and quality services",
+          "consent, analytics, performance, accessibility, privacy, and security services"
+        ],
+        "acceptance_criteria": [
+          "Deliverables are business-specific rather than token-swapped from another property.",
+          "Required owners and qualified reviewers are assigned.",
+          "Automated and manual evidence is recorded before completion."
+        ],
         "evidence": []
       }
     ],
-    "dependencies": [],
+    "dependencies": [
+      "@ainbis/tokens",
+      "@ainbis/core",
+      "@ainbis/archetypes",
+      "@ainbis/brand-engine",
+      "@ainbis/authority-platform",
+      "authority content models",
+      "editorial and domain-review workflow",
+      "SEO, schema, internal-linking, and quality services",
+      "consent, analytics, performance, accessibility, privacy, and security services"
+    ],
     "migration": [],
-    "launch": [],
-    "operations": []
+    "launch": [
+      "Default to private_build or public_noindex until every blocking gate passes.",
+      "Require approved indexability evidence before sitemap inclusion."
+    ],
+    "operations": [
+      "Monthly inventory-plan-catalog-runtime reconciliation",
+      "Risk-based source, regulation, deadline, and claim freshness review",
+      "Broken-link, canonical, robots, sitemap, schema, status, and crawl monitoring",
+      "Search performance, indexation, lead quality, conversion, and newsletter review",
+      "Accessibility, Core Web Vitals, dependency, privacy, and security regression review",
+      "Backlink, mention, review, reputation, overlap, consolidation, and retirement review"
+    ]
   },
   "gates": [
     {
@@ -609,14 +929,16 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T06:01:02.945Z",
-    "generator": "ainbis-business-authority-plan-generator@0.1.0",
+    "generated_at": "2026-07-19T06:59:34.588Z",
+    "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "2026-07-18-2104-multifamily-laundry-route-remittance-truth-desk-blueprint.html"
     ],
     "human_review": [],
     "change_log": [
-      "Initial deterministic scaffold from authoritative inventory"
+      "Initial deterministic scaffold from authoritative inventory",
+      "Automated portfolio triage assigned cohort professional-documentation-and-evidence-workflows and priority low.",
+      "Execution dependencies, epic acceptance criteria, technical defaults, migration requirements, and operating cadence were populated."
     ]
   }
 }
