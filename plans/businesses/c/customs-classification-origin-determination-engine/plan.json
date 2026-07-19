@@ -930,7 +930,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:03:56.177Z",
+    "generated_at": "2026-07-19T07:05:15.124Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260701-09-01-customs-classification-origin-determination-engine-blueprint.html"

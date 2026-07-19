@@ -936,7 +936,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:03:56.496Z",
+    "generated_at": "2026-07-19T07:05:15.416Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260701-22-01-sds-ghs-authoring-engine-blueprint.html"

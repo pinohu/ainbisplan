@@ -929,7 +929,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:03:56.189Z",
+    "generated_at": "2026-07-19T07:05:15.134Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/2026-06-30-1435-demurrage-detention-invoice-recovery-desk-blueprint.html"

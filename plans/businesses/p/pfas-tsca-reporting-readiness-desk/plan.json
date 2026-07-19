@@ -936,7 +936,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T07:03:56.444Z",
+    "generated_at": "2026-07-19T07:05:15.354Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260628-20-01-pfas-tsca-reporting-readiness-desk-blueprint.html"
