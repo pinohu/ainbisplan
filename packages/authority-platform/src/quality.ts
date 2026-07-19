@@ -67,8 +67,11 @@ export function detectPortfolioCollisions(plans: BusinessPlan[], threshold = 0.4
   const collisions: Array<{ left: string; right: string; score: number }> = [];
   for (let index = 0; index < plans.length; index += 1) {
     for (let compare = index + 1; compare < plans.length; compare += 1) {
-      const score = similarity(plans[index], plans[compare]);
-      if (score >= threshold) collisions.push({ left: plans[index].business.slug, right: plans[compare].business.slug, score: Number(score.toFixed(3)) });
+      const left = plans[index];
+      const right = plans[compare];
+      if (!left || !right) continue;
+      const score = similarity(left, right);
+      if (score >= threshold) collisions.push({ left: left.business.slug, right: right.business.slug, score: Number(score.toFixed(3)) });
     }
   }
   return collisions.sort((a, b) => b.score - a.score);
