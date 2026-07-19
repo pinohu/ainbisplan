@@ -10,7 +10,7 @@
     "build": "pnpm -r --if-present build",
     "typecheck": "pnpm -r --if-present typecheck",
     "validate": "node scripts/validate-repository.mjs",
-    "check": "pnpm validate && pnpm typecheck && pnpm build"
+    "check": "pnpm validate && pnpm build && pnpm typecheck"
   },
   "devDependencies": {
     "typescript": "^5.8.3"
