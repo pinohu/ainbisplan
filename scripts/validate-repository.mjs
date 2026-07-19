@@ -32,11 +32,15 @@ const requiredPaths = [
   "schemas/business-authority-plan.schema.json",
   "templates/business-authority-plan.template.json",
   "scripts/generate-business-authority-plans.mjs",
+  "scripts/execute-authority-portfolio.mjs",
+  "scripts/validate-authority-execution.mjs",
   "fixtures/inventory.sample.json",
+  "apps/portfolio-console/index.html",
   "packages/tokens/package.json",
   "packages/core/package.json",
   "packages/archetypes/package.json",
-  "packages/brand-engine/package.json"
+  "packages/brand-engine/package.json",
+  "packages/authority-platform/package.json"
 ];
 
 const errors = [];
@@ -77,12 +81,9 @@ for (const artifact of [
 const generatedDirectory = path.join(root, "docs/planning/generated");
 try {
   const generatedFiles = await readdir(generatedDirectory);
-
   for (const file of generatedFiles) {
     if (file === "README.md") continue;
-    if (!planningIndex.includes(file)) {
-      errors.push(`Generated planning artifact is not indexed: generated/${file}`);
-    }
+    if (!planningIndex.includes(file)) errors.push(`Generated planning artifact is not indexed: generated/${file}`);
   }
 } catch {
   errors.push("Unable to inspect docs/planning/generated");
@@ -100,17 +101,13 @@ for (const jsonPath of [
   }
 }
 
-const packageDirectories = ["tokens", "core", "archetypes", "brand-engine"];
+const packageDirectories = ["tokens", "core", "archetypes", "brand-engine", "authority-platform"];
 for (const packageDirectory of packageDirectories) {
   const packageJsonPath = path.join(root, "packages", packageDirectory, "package.json");
   try {
     const packageJson = JSON.parse(await readFile(packageJsonPath, "utf8"));
-    if (typeof packageJson.name !== "string" || !packageJson.name.startsWith("@ainbis/")) {
-      errors.push(`Invalid package name in packages/${packageDirectory}/package.json`);
-    }
-    if (packageJson.private !== true) {
-      errors.push(`Initial package must remain private: packages/${packageDirectory}/package.json`);
-    }
+    if (typeof packageJson.name !== "string" || !packageJson.name.startsWith("@ainbis/")) errors.push(`Invalid package name in packages/${packageDirectory}/package.json`);
+    if (packageJson.private !== true) errors.push(`Initial package must remain private: packages/${packageDirectory}/package.json`);
   } catch {
     errors.push(`Unable to validate packages/${packageDirectory}/package.json`);
   }
