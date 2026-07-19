@@ -931,7 +931,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T06:59:34.464Z",
+    "generated_at": "2026-07-19T07:00:28.129Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260710-18-01-form-5472-foreign-owned-completeness-engine-blueprint.html"

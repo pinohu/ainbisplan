@@ -939,7 +939,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T06:59:34.549Z",
+    "generated_at": "2026-07-19T07:00:28.233Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260629-00-01-ma-radv-audit-response-desk-blueprint.html"

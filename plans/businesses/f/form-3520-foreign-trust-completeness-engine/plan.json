@@ -931,7 +931,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T06:59:34.463Z",
+    "generated_at": "2026-07-19T07:00:28.127Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260710-13-01-form-3520-foreign-trust-completeness-engine-blueprint.html"

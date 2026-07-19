@@ -931,7 +931,7 @@
     }
   ],
   "provenance": {
-    "generated_at": "2026-07-19T06:59:34.650Z",
+    "generated_at": "2026-07-19T07:00:28.349Z",
     "generator": "ainbis-authority-execution@0.1.0",
     "inputs": [
       "imported-blueprints/20260630-20-01-prop65-warning-determination-engine-blueprint.html"
